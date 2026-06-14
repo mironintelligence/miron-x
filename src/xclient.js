@@ -190,7 +190,6 @@ class XClient {
       }
     }
   }
-}
 
   // Get mentions — searches for tweets replying to/mentioning the handle
   async *getMentions(handle, limit = 30) {

@@ -14,15 +14,37 @@ ${config.PERSONA.voice}
 RULES:
 ${config.TWEET_RULES}`;
 
-const STOIC_SYSTEM = `You are writing content AS ${config.PERSONA.name}.
+const WOLF_SYSTEM = `You are writing content AS ${config.PERSONA.name}.
+His X bio says "the wolf". His banner is a wolf among sheep. This is his identity — not a costume.
 
-${config.PERSONA.background}
+VOICE FOR WOLF TWEETS:
+Raw. Masculine. Warrior energy — not motivational poster, not hustle bro.
+The kind of thing a man says after he's been through real fire and came out the other side.
+Embracing chaos, enduring pain, moving alone, staying dangerous.
+No weakness. No complaint. No victim framing.
+Short sharp sentences. Hits like a fist.
+Never preachy. Speaks from lived experience, not theory.
+English only. Max 220 chars. No hashtags. Max 1 emoji.
 
-VOICE: Same direct, dry builder voice — but this tweet draws from Stoic philosophy or hard-won mental models.
-Not motivational poster fluff. Not "hustle bro" energy. Real, quiet strength.
-Think Marcus Aurelius applied to building companies in the 21st century.
-Never preachy. Never "you should". State it as personal truth or observation.
-English only. Max 240 chars.`;
+THEMES TO DRAW FROM:
+- The wolf doesn't explain himself to the flock
+- Dancing with chaos — chaos is not a threat, it's the arena
+- Pain as a teacher, not an enemy
+- Solitude, focus, the discipline of doing what others won't
+- Building something real while others talk
+- Staying sharp when everything is uncertain
+- The difference between men who endure and men who fold
+
+GOOD EXAMPLES (tone reference):
+"Most people run from chaos. I learned to move inside it. That's where the real game is played."
+"Pain doesn't stop you. The story you tell about pain stops you."
+"The wolf doesn't need the flock to believe in him. He just needs to know where he's going."
+"Every hard thing you didn't quit made you something. Most people will never know what that something is."
+
+BAD (never):
+"Rise and grind 💪 #Motivation #Hustle"
+"Real men never give up!!!"
+"Be a wolf not a sheep 🐺🔥🔥🔥"`;
 
 function formatTrendContext(trends) {
   return [
@@ -32,14 +54,6 @@ function formatTrendContext(trends) {
 }
 
 async function generateTweet(trends, slotNumber) {
-  // ~25% chance of stoic/philosophy tweet on slots 3 and 4
-  const isStoicSlot = (slotNumber === '3' || slotNumber === '4' || slotNumber === 3 || slotNumber === 4);
-  const goStoic = isStoicSlot && Math.random() < 0.3;
-
-  if (goStoic) {
-    return generateStoicTweet();
-  }
-
   const ctx = formatTrendContext(trends);
   const res = await groq.chat.completions.create({
     model: 'llama-3.3-70b-versatile',
@@ -56,24 +70,28 @@ async function generateTweet(trends, slotNumber) {
   return res.choices[0].message.content.trim();
 }
 
-async function generateStoicTweet() {
+async function generateWolfTweet() {
   const prompts = [
-    'Write a short stoic reflection on building something real when everything is uncertain. No advice. Just truth.',
-    'Marcus Aurelius meets the startup world. One quiet, hard observation about doing the work when no one is watching.',
-    'Write about the gap between planning and shipping — through a stoic lens. Builder perspective. No fluff.',
-    'A stoic thought on failure, iteration, and why most people quit too early. Specific. Dry. Not motivational.',
-    'Write about staying focused when the world is full of noise. Stoic framing. Builder context.',
-    'A thought on patience in building — the kind of patience that comes from knowing what matters, not from waiting.',
+    'Write a raw tweet about embracing chaos — not surviving it, thriving in it. Warrior energy.',
+    'Write a tweet about enduring pain without complaint. The wolf keeps moving. No victim framing.',
+    'Write about operating alone — the discipline of not needing validation from the flock.',
+    'Write about the gap between men who fold under pressure and men who sharpen under it.',
+    'Write a tweet about doing the work in the dark — no audience, no applause, just the grind.',
+    'Write about chaos being the natural habitat of men who are built differently.',
+    'Write about what most men call "risk" being the only real path worth taking.',
+    'Write about staying dangerous when life tries to domesticate you.',
+    'Write about the difference between those who talk about hard things and those who walk through them.',
+    'Write about solitude as a weapon — the clarity that comes from cutting out the noise.',
   ];
   const prompt = prompts[Math.floor(Math.random() * prompts.length)];
 
   const res = await groq.chat.completions.create({
     model: 'llama-3.3-70b-versatile',
-    max_tokens: 150,
-    temperature: 0.85,
+    max_tokens: 140,
+    temperature: 0.9,
     messages: [
-      { role: 'system', content: STOIC_SYSTEM },
-      { role: 'user', content: `${prompt}\nMax 240 chars. Return ONLY the tweet text.` }
+      { role: 'system', content: WOLF_SYSTEM },
+      { role: 'user', content: `${prompt}\nMax 220 chars. Return ONLY the tweet text.` }
     ]
   });
   return res.choices[0].message.content.trim();
@@ -141,4 +159,4 @@ async function generateMentionReply(mentionText, fromUsername) {
   return text === 'SKIP' ? null : text;
 }
 
-module.exports = { generateTweet, generateThread, generateReply, generateMentionReply };
+module.exports = { generateTweet, generateThread, generateReply, generateMentionReply, generateWolfTweet };

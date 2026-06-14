@@ -93,4 +93,6 @@ async function main() {
   saveLog(log);
 }
 
-main().catch(e => { console.error('FATAL:', e.message); process.exit(1); });
+if (require.main === module) {
+  main().catch(e => { console.error('FATAL:', e.message); process.exit(1); });
+}
