@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "groq-sdk": "latest",
-    "xactions": "latest",
     "rss-parser": "^3.13.0",
     "axios": "^1.6.0",
     "dotenv": "^16.3.1"

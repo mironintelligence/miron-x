@@ -1,6 +1,7 @@
 require('dotenv').config();
 const { getTodaysTrends } = require('./trends');
 const { generateTweet } = require('./generator');
+const { XClient } = require('./xclient');
 const fs = require('fs');
 const path = require('path');
 
@@ -43,17 +44,8 @@ async function main() {
 
   console.log(`Tweet (${tweet.length}c):\n${tweet}\n`);
 
-  // XACTIONS_SESSION_COOKIE = "auth_token=XXX; ct0=YYY"
-  const { Scraper } = await import('xactions');
-  const scraper = new Scraper();
-  await scraper.setCookies(process.env.XACTIONS_SESSION_COOKIE);
-
-  if (!await scraper.isLoggedIn()) {
-    console.error('Auth failed — check XACTIONS_SESSION_COOKIE includes both auth_token and ct0');
-    process.exit(1);
-  }
-
-  await scraper.sendTweet(tweet);
+  const x = new XClient(process.env.XACTIONS_SESSION_COOKIE);
+  await x.sendTweet(tweet);
   console.log('✅ Posted');
   save(tweet);
 }
