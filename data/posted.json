@@ -23,5 +23,9 @@
   {
     "text": "\"KPMG's report debacle shows AI's 'hallucinations' are a symptom of a larger issue: untested models in production. When you're shipping, accuracy matters more than benchmarks.\"",
     "ts": "2026-06-14T21:35:17.552Z"
+  },
+  {
+    "text": "\"Most LLM 'innovations' are just rehashed existing models. Rio3.5 beating Qwen3.7 means nothing if it's not solving real business problems. What workflow does it actually improve?\"",
+    "ts": "2026-06-14T21:36:27.006Z"
   }
 ]
