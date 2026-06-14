@@ -1,9 +1,9 @@
 name: 🤝 Engagement Routines
 on:
   schedule:
-    - cron: '0 13 * * *'   # 9am EST — full (like+reply) US morning
-    - cron: '0 17 * * *'   # 1pm EST — like only, US midday
-    - cron: '0 22 * * *'   # 6pm EST — reply only, US evening peak
+    - cron: '0 13 * * *'   # 9am EST — full (like+reply)
+    - cron: '0 17 * * *'   # 1pm EST — like only
+    - cron: '0 22 * * *'   # 6pm EST — reply only
   workflow_dispatch:
     inputs:
       mode:
@@ -18,16 +18,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: '20', cache: 'npm' }
-
-      - run: |
-          sudo apt-get install -y -q \
-            libasound2 libatk1.0-0 libatk-bridge2.0-0 libcairo2 libcups2 \
-            libdbus-1-3 libdrm2 libgbm1 libglib2.0-0 libgtk-3-0 libnspr4 \
-            libnss3 libpango-1.0-0 libx11-6 libxcb1 libxcomposite1 \
-            libxdamage1 libxext6 libxfixes3 libxrandr2 libxss1 libxtst6 xdg-utils
+        with: { node-version: '24', cache: 'npm' }
 
       - run: npm ci
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: true
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
 
       - name: Run engagement
         env:
