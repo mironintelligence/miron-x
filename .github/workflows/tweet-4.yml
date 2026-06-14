@@ -1,7 +1,7 @@
-name: 📤 Tweet 4 - 21:00 (US overlap)
+name: 📤 Tweet 4 - 8pm EST
 on:
   schedule:
-    - cron: '0 18 * * *'   # 21:00 Istanbul = 14:00 US East = 11:00 US West
+    - cron: '0 0 * * *'    # 8pm EST / 5pm PST (US prime evening)
   workflow_dispatch:
 
 jobs:

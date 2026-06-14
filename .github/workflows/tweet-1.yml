@@ -1,7 +1,7 @@
-name: 📤 Tweet 1 - 11:30
+name: 📤 Tweet 1 - 11am EST
 on:
   schedule:
-    - cron: '30 8 * * *'   # 11:30 Istanbul (UTC+3)
+    - cron: '0 15 * * *'   # 11am EST / 8am PST / 4pm London
   workflow_dispatch:
 
 jobs:

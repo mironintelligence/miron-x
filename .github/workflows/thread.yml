@@ -1,7 +1,7 @@
 name: 🧵 Morning Thread
 on:
   schedule:
-    - cron: '0 6 * * *'   # 09:00 Istanbul (UTC+3)
+    - cron: '0 13 * * *'   # 9am EST / 6am PST / 2pm London
   workflow_dispatch:
 
 jobs:
