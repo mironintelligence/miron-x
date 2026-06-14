@@ -1,0 +1,34 @@
+name: 💬 Mention Replies
+on:
+  schedule:
+    - cron: '0 14 * * *'   # 10am EST — check morning mentions
+    - cron: '0 19 * * *'   # 3pm EST — check afternoon mentions
+    - cron: '0 23 * * *'   # 7pm EST — check evening mentions
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions: { contents: write }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '24', cache: 'npm' }
+
+      - run: npm ci
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: true
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
+
+      - name: Reply to mentions
+        env:
+          XACTIONS_SESSION_COOKIE: ${{ secrets.XACTIONS_SESSION_COOKIE }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: node src/replies.js
+
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ || true
+          git diff --staged --quiet || git commit -m "💬 auto [skip ci]"
+          git push || true

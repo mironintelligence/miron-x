@@ -192,4 +192,38 @@ class XClient {
   }
 }
 
+  // Get mentions — searches for tweets replying to/mentioning the handle
+  async *getMentions(handle, limit = 30) {
+    const clean = handle.replace('@', '');
+    // Search for replies directed at this account in last 24h
+    const query = `@${clean} -from:${clean}`;
+    const variables = {
+      rawQuery: query,
+      count: Math.min(limit, 30),
+      querySource: 'typed_query',
+      product: 'Latest',
+    };
+    const data = await this._gql('gkjsKepM6gl_HmFWoWKfgg', 'SearchTimeline', variables, 'GET');
+    const instructions = data?.data?.search_by_raw_query?.search_timeline?.timeline?.instructions || [];
+    for (const instr of instructions) {
+      for (const entry of instr.entries || []) {
+        const result = entry?.content?.itemContent?.tweet_results?.result;
+        const tweet = result?.legacy;
+        const id = result?.rest_id;
+        const authorHandle = result?.core?.user_results?.result?.legacy?.screen_name;
+        if (tweet && id && authorHandle && authorHandle.toLowerCase() !== clean.toLowerCase()) {
+          yield {
+            id,
+            text: tweet.full_text || tweet.text || '',
+            username: authorHandle,
+            likeCount: tweet.favorite_count || 0,
+            replyCount: tweet.reply_count || 0,
+            timeParsed: tweet.created_at ? new Date(tweet.created_at) : new Date(),
+          };
+        }
+      }
+    }
+  }
+}
+
 module.exports = { XClient };
