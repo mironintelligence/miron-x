@@ -19,5 +19,9 @@
   {
     "text": "\"KPMG's report debacle shows AI's hallucination problem is real. Builders who don't address this will lose customers fast.\"",
     "ts": "2026-06-14T21:34:00.376Z"
+  },
+  {
+    "text": "\"KPMG's report debacle shows AI's 'hallucinations' are a symptom of a larger issue: untested models in production. When you're shipping, accuracy matters more than benchmarks.\"",
+    "ts": "2026-06-14T21:35:17.552Z"
   }
 ]
