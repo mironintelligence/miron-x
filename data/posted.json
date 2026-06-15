@@ -1,7 +1,8 @@
 [
   {
     "text": "\"Rio3.5 beating Qwen3.7 means nothing. What matters: can it handle real workflows, not just benchmarks?\"",
-    "ts": "2026-06-14T21:10:27.588Z"
+    "ts": "2026-06-14T21:10:27.588Z",
+    "type": "general"
   },
   {
     "text": "Chaos is my home. Not something to be feared, but where I'm most alive.",
@@ -10,47 +11,58 @@
   },
   {
     "text": "\"Rio3.5 beating Qwen3.7 means nothing if it can't solve a real problem in Rio de Janeiro. What's the city's deployment plan?\"",
-    "ts": "2026-06-14T21:29:20.876Z"
+    "ts": "2026-06-14T21:29:20.876Z",
+    "type": "general"
   },
   {
     "text": "\"Benchmark wins mean nothing. Rio3.5 beating Qwen3.7 doesn't pay bills. What matters: can it solve real problems in production?\"",
-    "ts": "2026-06-14T21:32:40.157Z"
+    "ts": "2026-06-14T21:32:40.157Z",
+    "type": "general"
   },
   {
     "text": "\"KPMG's report debacle shows AI's hallucination problem is real. Builders who don't address this will lose customers fast.\"",
-    "ts": "2026-06-14T21:34:00.376Z"
+    "ts": "2026-06-14T21:34:00.376Z",
+    "type": "general"
   },
   {
     "text": "\"KPMG's report debacle shows AI's 'hallucinations' are a symptom of a larger issue: untested models in production. When you're shipping, accuracy matters more than benchmarks.\"",
-    "ts": "2026-06-14T21:35:17.552Z"
+    "ts": "2026-06-14T21:35:17.552Z",
+    "type": "general"
   },
   {
     "text": "\"Most LLM 'innovations' are just rehashed existing models. Rio3.5 beating Qwen3.7 means nothing if it's not solving real business problems. What workflow does it actually improve?\"",
-    "ts": "2026-06-14T21:36:27.006Z"
+    "ts": "2026-06-14T21:36:27.006Z",
+    "type": "general"
   },
   {
     "text": "\"KPMG's pulled report on AI usage due to hallucinations is a reminder: most AI models can't tell fact from fiction. Doesn't matter how many benchmarks they win.\"",
-    "ts": "2026-06-14T21:38:09.438Z"
+    "ts": "2026-06-14T21:38:09.438Z",
+    "type": "general"
   },
   {
     "text": "\"KPMG's report debacle shows AI's hallucinations are a real problem. Builders need to focus on robust testing, not just model accuracy.\"",
-    "ts": "2026-06-14T21:39:35.939Z"
+    "ts": "2026-06-14T21:39:35.939Z",
+    "type": "general"
   },
   {
     "text": "\"90% of 'homegrown' LLMs are just rebranded existing models. What matters is who integrates them into real workflows, not who slaps a new logo on. 🚫\"",
-    "ts": "2026-06-14T21:40:54.977Z"
+    "ts": "2026-06-14T21:40:54.977Z",
+    "type": "general"
   },
   {
     "text": "\"Benchmark wins don't pay bills. Rio3.5 beating Qwen3.7 is irrelevant if it doesn't solve real problems for the city. What's the ROI on this AI investment?\"",
-    "ts": "2026-06-14T22:04:32.198Z"
+    "ts": "2026-06-14T22:04:32.198Z",
+    "type": "general"
   },
   {
     "text": "\"Ai is code – and can't be prompted into being smarter. This is what actually matters when shipping: writing better code, not chatting with LLMs 💻\"",
-    "ts": "2026-06-15T04:45:38.617Z"
+    "ts": "2026-06-15T04:45:38.617Z",
+    "type": "general"
   },
   {
     "text": "\"Not everyone using AI for everything is a good thing. Most are just checking a box. Real question: which workflows actually improve with AI?\"",
-    "ts": "2026-06-15T07:28:27.371Z"
+    "ts": "2026-06-15T07:28:27.371Z",
+    "type": "general"
   },
   {
     "text": "Autonomous drones will replace 30% of human inspectors in high-risk industries within 2 years 🚁 \nwhat's the real cost of delaying this shift",
@@ -60,7 +72,8 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-15T15:30:32.821Z"
+    "lastChecked": "2026-06-15T19:47:06.917Z",
+    "type": "general"
   },
   {
     "text": "foreign companies struggle to raise capital in japan because they don't understand the market's unique dynamics 🚀 \nwhat works in sv doesn't work here \nwhen will they learn to adapt",
@@ -70,7 +83,8 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-15T15:30:32.822Z"
+    "lastChecked": "2026-06-15T19:47:06.919Z",
+    "type": "general"
   },
   {
     "text": "6 months ago autonomous systems were 80% hype and 20% tech now they're 40% hype and 60% deployable code what changed is builders like myself actually shipping products 🚀",
@@ -80,7 +94,8 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-15T15:30:32.822Z"
+    "lastChecked": "2026-06-15T19:47:06.919Z",
+    "type": "general"
   },
   {
     "text": "70% of marketing spend is wasted on distribution not product because founders conflate going viral with actual growth 📉",
@@ -90,7 +105,8 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-15T15:30:32.822Z"
+    "lastChecked": "2026-06-15T19:47:06.919Z",
+    "type": "general"
   },
   {
     "text": "Only 12% of LLMs in production are used for actual decision-making the rest are just generating marketing copy 📊",
@@ -100,7 +116,8 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-15T15:30:32.822Z"
+    "lastChecked": "2026-06-15T19:47:06.919Z",
+    "type": "general"
   },
   {
     "text": "40% of AI products are built by teams with no domain expertise, resulting in 90% of AI projects being redeployed after initial launch, wasting $100k to $1m per project 🚀",
@@ -110,12 +127,18 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-15T15:30:32.822Z"
+    "lastChecked": "2026-06-15T19:47:06.919Z",
+    "type": "general"
   },
   {
     "text": "Your startup will die if you don't understand how to navigate GOVERNMENT PROCUREMENT pipelines. What's your PLAN to sell to the state",
     "id": "2066597800633053640",
     "ts": "2026-06-15T19:04:45.996Z",
-    "type": "general"
+    "type": "general",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-15T19:47:06.919Z"
   }
 ]

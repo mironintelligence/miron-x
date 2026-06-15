@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-15T15:30:41.280Z",
+  "updatedAt": "2026-06-15T19:41:17.782Z",
   "errorAnalysis": {
     "totalRecent": 0,
     "byScript": {},
@@ -16,7 +16,7 @@
   },
   "growthAnalysis": {
     "status": "insufficient_data",
-    "currentFollowers": 0
+    "currentFollowers": 5
   },
   "keywordSuggestions": [],
   "overallRecommendations": [
