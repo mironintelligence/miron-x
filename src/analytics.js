@@ -6,6 +6,7 @@
 
 require('dotenv').config();
 const { XClient } = require('./xclient');
+const { logError } = require('./logger');
 const fs = require('fs');
 const path = require('path');
 
@@ -64,7 +65,7 @@ async function main() {
       if (updated % 5 === 0) console.log(`  ${updated}/${toCheck.length} checked...`);
       await sleep(800);
     } catch (e) {
-      // Tweet might be deleted or ID invalid — skip silently
+      logError('analytics.js', e, { phase: 'fetch_tweet', tweetId: tweet.id });
       tweet.lastChecked = new Date().toISOString();
     }
   }
@@ -102,5 +103,8 @@ async function main() {
 }
 
 if (require.main === module) {
-  main().catch(e => { console.error('FATAL:', e.message); process.exit(1); });
+  main().catch(e => {
+    logError('analytics.js', e, { phase: 'uncaught' });
+    process.exit(1);
+  });
 }

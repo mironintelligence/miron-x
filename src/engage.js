@@ -1,6 +1,7 @@
 require('dotenv').config();
 const { generateReply } = require('./generator');
 const { XClient } = require('./xclient');
+const { logError } = require('./logger');
 const config = require('./config');
 const fs = require('fs');
 const path = require('path');
@@ -43,7 +44,7 @@ async function main() {
 
   // ─── LIKE ──────────────────────────────────────────────────────────────
   if (mode === 'all' || mode === 'like') {
-    console.log('❤  Like rutini...');
+    console.log('Like rutini...');
     const kw = config.SEARCH_KEYWORDS[Math.floor(Math.random() * config.SEARCH_KEYWORDS.length)];
     let liked = 0;
     try {
@@ -52,21 +53,25 @@ async function main() {
         if (liked >= 12) break;
         if (!t.id || done(t.id, 'likes', log)) continue;
         if ((t.likeCount || 0) < 5) continue;
-        await x.likeTweet(t.id);
-        log.likes.push(String(t.id));
-        liked++;
-        await sleep(2800);
+        try {
+          await x.likeTweet(t.id);
+          log.likes.push(String(t.id));
+          liked++;
+          await sleep(2800);
+        } catch (e) {
+          logError('engage.js', e, { phase: 'like', tweetId: t.id, keyword: kw });
+        }
       }
-    } catch (e) { console.error('Like error:', e.message); }
+    } catch (e) {
+      logError('engage.js', e, { phase: 'search_for_likes', keyword: kw });
+    }
     console.log(`  ✅ ${liked} likes`);
   }
 
   // ─── REPLY ─────────────────────────────────────────────────────────────
   if (mode === 'all' || mode === 'reply') {
-    console.log('💬 Reply rutini...');
-    const targets = [...config.TARGET_ACCOUNTS]
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 5);
+    console.log('Reply rutini...');
+    const targets = [...config.TARGET_ACCOUNTS].sort(() => Math.random() - 0.5).slice(0, 5);
     let replied = 0;
 
     for (const account of targets) {
@@ -86,23 +91,23 @@ async function main() {
         await x.sendTweet(reply, { replyTo: recent.id });
         log.replies.push(String(recent.id));
         replied++;
-        console.log(`  ✅ @${account}: ${reply.substring(0, 55)}...`);
+        console.log(`  ✅ @${account}: ${reply.substring(0, 55)}`);
         await sleep(12000);
       } catch (e) {
-        console.error(`  Reply @${account} error:`, e.message);
+        logError('engage.js', e, { phase: 'reply', account });
       }
     }
     console.log(`  ✅ ${replied} replies`);
   }
 
-  // ─── FOLLOW — çok seçici, sadece elle tetiklenince ──────────────────────
+  // ─── FOLLOW — sadece elle tetiklenince ─────────────────────────────────
   if (mode === 'follow') {
-    console.log('➕ Follow rutini (seçici mod)...');
+    console.log('Follow rutini (seçici mod)...');
     const todayKey = new Date().toISOString().slice(0, 10);
     const todayFollows = (log.followDates || []).filter(d => d === todayKey).length;
 
     if (todayFollows >= 1) {
-      console.log('  ⏭ Bugün zaten follow yapıldı, atlanıyor');
+      console.log('  Bugün zaten follow yapıldı');
     } else {
       let followed = 0;
       try {
@@ -124,17 +129,24 @@ async function main() {
               console.log(`  ✅ @${t.username} (${fc} followers)`);
               await sleep(8000);
             }
-          } catch { continue; }
+          } catch (e) {
+            logError('engage.js', e, { phase: 'follow_check', username: t.username });
+          }
         }
-      } catch (e) { console.error('Follow error:', e.message); }
+      } catch (e) {
+        logError('engage.js', e, { phase: 'follow_search' });
+      }
       console.log(`  ✅ ${followed} follows`);
     }
   }
 
   saveLog(log);
-  console.log('💾 Log saved');
+  console.log('Log saved');
 }
 
 if (require.main === module) {
-  main().catch(e => { console.error('FATAL:', e.message); process.exit(1); });
+  main().catch(e => {
+    logError('engage.js', e, { phase: 'uncaught', mode: process.env.ENGAGE_MODE });
+    process.exit(1);
+  });
 }

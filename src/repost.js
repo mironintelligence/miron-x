@@ -1,6 +1,7 @@
 require('dotenv').config();
 const { XClient } = require('./xclient');
 const { generateRepostComment } = require('./generator');
+const { logError } = require('./logger');
 const config = require('./config');
 const fs = require('fs');
 const path = require('path');
@@ -36,7 +37,6 @@ async function main() {
   const log = loadLog();
   if (!log.reposts) log.reposts = [];
 
-  // Pick a random target account to check
   const accounts = [...config.REPOST_ACCOUNTS].sort(() => Math.random() - 0.5);
   let done = false;
 
@@ -50,33 +50,33 @@ async function main() {
       for (const tweet of tweets) {
         if (log.reposts.includes(tweet.id)) continue;
         const hoursOld = (Date.now() - new Date(tweet.timeParsed).getTime()) / 3600000;
-        if (hoursOld > 24) continue; // max 24h old
-        if (tweet.text.startsWith('RT ')) continue; // skip retweets
-        if (tweet.text.length < 40) continue; // skip very short
+        if (hoursOld > 24) continue;
+        if (tweet.text.startsWith('RT ')) continue;
+        if (tweet.text.length < 40) continue;
 
-        // Generate Kerim's angle as a comment
         const comment = await generateRepostComment(tweet.text, account);
         if (!comment || comment.length < 10) continue;
 
-        // Quote-tweet via attachment_url — proper GraphQL quote tweet
         const trimmedComment = comment.length > 270 ? comment.substring(0, 270) : comment;
         await x.sendTweet(trimmedComment, { quoteTweetId: tweet.id });
 
         log.reposts.push(tweet.id);
-        console.log(`  ✅ Quote-tweeted @${account}: ${comment.substring(0, 60)}...`);
+        console.log(`  ✅ Quote-tweeted @${account}: ${comment.substring(0, 60)}`);
         done = true;
         break;
       }
     } catch (e) {
-      console.error(`  Error with @${account}:`, e.message);
-      continue;
+      logError('repost.js', e, { phase: 'quote_tweet', account });
     }
   }
 
-  if (!done) console.log('  No suitable tweet found to repost today');
+  if (!done) console.log('  No suitable tweet found today');
   saveLog(log);
 }
 
 if (require.main === module) {
-  main().catch(e => { console.error('FATAL:', e.message); process.exit(1); });
+  main().catch(e => {
+    logError('repost.js', e, { phase: 'uncaught' });
+    process.exit(1);
+  });
 }

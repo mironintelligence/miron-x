@@ -2,6 +2,7 @@ require('dotenv').config();
 const { getTodaysTrends } = require('./trends');
 const { generateTweet } = require('./generator');
 const { XClient } = require('./xclient');
+const { logError } = require('./logger');
 const fs = require('fs');
 const path = require('path');
 
@@ -25,31 +26,51 @@ function isDuplicate(tweet) {
 
 async function main() {
   const slot = process.env.TWEET_SLOT || '1';
-  console.log(`▶ post.js — Slot #${slot}`);
+  const mode = process.env.SV_MODE === 'true' ? 'SV' : process.env.LONDON_MODE === 'true' ? 'London' : 'general';
+  console.log(`▶ post.js — Slot #${slot} [${mode}]`);
 
-  const trends = await getTodaysTrends();
-  console.log(`Trends: ${trends.hackerNews.length} HN + ${trends.rssNews.length} RSS`);
+  let trends;
+  try {
+    trends = await getTodaysTrends();
+    console.log(`Trends: ${trends.hackerNews.length} HN + ${trends.rssNews.length} RSS`);
+  } catch (e) {
+    logError('post.js', e, { slot, phase: 'fetch_trends' });
+    process.exit(1);
+  }
 
   let tweet = null;
-  for (let i = 0; i < 3; i++) {
-    const candidate = await generateTweet(trends, slot);
-    if (!isDuplicate(candidate)) { tweet = candidate; break; }
-    console.log(`Attempt ${i + 1}: duplicate, retrying...`);
+  try {
+    for (let i = 0; i < 3; i++) {
+      const candidate = await generateTweet(trends, slot);
+      if (!isDuplicate(candidate)) { tweet = candidate; break; }
+      console.log(`Attempt ${i + 1}: duplicate, retrying...`);
+    }
+  } catch (e) {
+    logError('post.js', e, { slot, phase: 'generate_tweet', mode });
+    process.exit(1);
   }
 
   if (!tweet) {
-    console.error('Could not generate unique tweet');
+    logError('post.js', new Error('Could not generate unique tweet after 3 attempts'), { slot, mode });
     process.exit(1);
   }
 
   console.log(`Tweet (${tweet.length}c):\n${tweet}\n`);
 
-  const x = new XClient(process.env.XACTIONS_SESSION_COOKIE);
-  const result = await x.sendTweet(tweet);
-  console.log('✅ Posted');
-  save(tweet, result?.id || null);
+  try {
+    const x = new XClient(process.env.XACTIONS_SESSION_COOKIE);
+    const result = await x.sendTweet(tweet);
+    console.log('✅ Posted');
+    save(tweet, result?.id || null);
+  } catch (e) {
+    logError('post.js', e, { slot, mode, phase: 'send_tweet', tweet: tweet.substring(0, 80) });
+    process.exit(1);
+  }
 }
 
 if (require.main === module) {
-  main().catch(e => { console.error('FATAL:', e.message); process.exit(1); });
+  main().catch(e => {
+    logError('post.js', e, { slot: process.env.TWEET_SLOT, phase: 'uncaught' });
+    process.exit(1);
+  });
 }

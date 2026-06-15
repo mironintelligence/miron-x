@@ -1,6 +1,7 @@
 require('dotenv').config();
 const { XClient } = require('./xclient');
 const { generateMentionReply } = require('./generator');
+const { logError } = require('./logger');
 const config = require('./config');
 const fs = require('fs');
 const path = require('path');
@@ -8,11 +9,10 @@ const path = require('path');
 const LOG_PATH = path.join(__dirname, '../data/engaged.json');
 const HANDLE = config.HANDLE;
 
-// Küfürlü / spam / anlamsız içerik filtresi
 const BLOCK_PATTERNS = [
   /fuck|shit|bitch|asshole|idiot|stupid|dumb|retard|cunt|moron/i,
   /\b(spam|bot|fake|scam|buy now|click here|follow back|f4f)\b/i,
-  /(.)\1{5,}/,           // aynı karakter 5+ kez arka arkaya
+  /(.)\1{5,}/,
 ];
 
 function isBlockedContent(text) {
@@ -22,7 +22,6 @@ function isBlockedContent(text) {
 function isQualityMention(tweet) {
   if (!tweet.text || tweet.text.length < 20) return false;
   if (isBlockedContent(tweet.text)) return false;
-  // Sadece @mention'dan ibaret tweetleri atla
   const withoutMentions = tweet.text.replace(/@\w+/g, '').trim();
   if (withoutMentions.length < 15) return false;
   return true;
@@ -51,13 +50,17 @@ async function main() {
   let replied = 0;
   const mentions = [];
 
-  for await (const m of x.getMentions(HANDLE, 30)) {
-    mentions.push(m);
+  try {
+    for await (const m of x.getMentions(HANDLE, 30)) {
+      mentions.push(m);
+    }
+  } catch (e) {
+    logError('replies.js', e, { phase: 'fetch_mentions', handle: HANDLE });
+    saveLog(log);
+    process.exit(1);
   }
 
   console.log(`Found ${mentions.length} mentions`);
-
-  // Saate göre sırala — en yeni önce
   mentions.sort((a, b) => new Date(b.timeParsed) - new Date(a.timeParsed));
 
   for (const mention of mentions) {
@@ -65,28 +68,26 @@ async function main() {
     if (log.mentionReplies.includes(mention.id)) continue;
 
     const hoursOld = (Date.now() - new Date(mention.timeParsed).getTime()) / 3600000;
-    if (hoursOld > 48) continue; // 48 saatten eski yorumları atla
+    if (hoursOld > 48) continue;
 
     if (!isQualityMention(mention)) {
-      console.log(`  ⏭ @${mention.username}: filtered (low quality or blocked)`);
+      console.log(`  ⏭ @${mention.username}: filtered`);
       continue;
     }
 
     try {
       const reply = await generateMentionReply(mention.text, mention.username);
       if (!reply) {
-        console.log(`  ↩ @${mention.username}: SKIP`);
         log.mentionReplies.push(mention.id);
         continue;
       }
-
       await x.sendTweet(reply, { replyTo: mention.id });
       log.mentionReplies.push(mention.id);
       replied++;
-      console.log(`  ✅ @${mention.username}: ${reply.substring(0, 60)}...`);
+      console.log(`  ✅ @${mention.username}: ${reply.substring(0, 60)}`);
       await sleep(8000);
     } catch (e) {
-      console.error(`  Reply error @${mention.username}:`, e.message);
+      logError('replies.js', e, { phase: 'send_reply', username: mention.username, mentionId: mention.id });
     }
   }
 
@@ -95,5 +96,8 @@ async function main() {
 }
 
 if (require.main === module) {
-  main().catch(e => { console.error('FATAL:', e.message); process.exit(1); });
+  main().catch(e => {
+    logError('replies.js', e, { phase: 'uncaught' });
+    process.exit(1);
+  });
 }

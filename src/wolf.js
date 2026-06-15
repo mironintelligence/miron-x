@@ -1,6 +1,7 @@
 require('dotenv').config();
 const { generateWolfTweet } = require('./generator');
 const { XClient } = require('./xclient');
+const { logError } = require('./logger');
 const fs = require('fs');
 const path = require('path');
 
@@ -22,24 +23,37 @@ async function main() {
   console.log('▶ wolf.js — Daily wolf tweet');
 
   let tweet = null;
-  for (let i = 0; i < 3; i++) {
-    const candidate = await generateWolfTweet();
-    if (candidate && candidate.length > 20) { tweet = candidate; break; }
+  try {
+    for (let i = 0; i < 3; i++) {
+      const candidate = await generateWolfTweet();
+      if (candidate && candidate.length > 20) { tweet = candidate; break; }
+    }
+  } catch (e) {
+    logError('wolf.js', e, { phase: 'generate' });
+    process.exit(1);
   }
 
   if (!tweet) {
-    console.error('Could not generate wolf tweet');
+    logError('wolf.js', new Error('Could not generate wolf tweet after 3 attempts'), {});
     process.exit(1);
   }
 
   console.log(`Wolf tweet (${tweet.length}c):\n${tweet}\n`);
 
-  const x = new XClient(process.env.XACTIONS_SESSION_COOKIE);
-  const result = await x.sendTweet(tweet);
-  console.log('✅ Posted');
-  save(tweet, result?.id || null);
+  try {
+    const x = new XClient(process.env.XACTIONS_SESSION_COOKIE);
+    const result = await x.sendTweet(tweet);
+    console.log('✅ Posted');
+    save(tweet, result?.id || null);
+  } catch (e) {
+    logError('wolf.js', e, { phase: 'send_tweet', tweet: tweet.substring(0, 80) });
+    process.exit(1);
+  }
 }
 
 if (require.main === module) {
-  main().catch(e => { console.error('FATAL:', e.message); process.exit(1); });
+  main().catch(e => {
+    logError('wolf.js', e, { phase: 'uncaught' });
+    process.exit(1);
+  });
 }
