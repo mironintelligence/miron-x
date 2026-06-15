@@ -47,5 +47,19 @@
     "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
     "phase": "reply",
     "account": "robjama"
+  },
+  {
+    "ts": "2026-06-15T23:53:24.195Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "iamharaldur"
+  },
+  {
+    "ts": "2026-06-15T23:53:27.256Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "elonmusk"
   }
 ]
