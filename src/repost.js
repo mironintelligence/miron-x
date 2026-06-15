@@ -58,18 +58,9 @@ async function main() {
         const comment = await generateRepostComment(tweet.text, account);
         if (!comment || comment.length < 10) continue;
 
-        // Quote-tweet: send tweet with quoted URL
-        const quotedUrl = `https://x.com/${account}/status/${tweet.id}`;
-        const quotedText = `${comment} ${quotedUrl}`;
-
-        if (quotedText.length > 280) {
-          // Trim comment to fit
-          const maxCommentLen = 280 - quotedUrl.length - 1;
-          const trimmed = comment.substring(0, maxCommentLen);
-          await x.sendTweet(`${trimmed} ${quotedUrl}`);
-        } else {
-          await x.sendTweet(quotedText);
-        }
+        // Quote-tweet via attachment_url — proper GraphQL quote tweet
+        const trimmedComment = comment.length > 270 ? comment.substring(0, 270) : comment;
+        await x.sendTweet(trimmedComment, { quoteTweetId: tweet.id });
 
         log.reposts.push(tweet.id);
         console.log(`  ✅ Quote-tweeted @${account}: ${comment.substring(0, 60)}...`);

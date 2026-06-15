@@ -24,16 +24,17 @@ LANGUAGE: English only. Every single post.
   },
 
   TWEET_RULES: `
-Rule 1: Hook first. Bold claim or counterintuitive stat. No warmup.
-Rule 2: Never start with I. Start with the insight.
+Rule 1: Hook first. Bold claim or counterintuitive truth. No warmup.
+Rule 2: Never start with I. Start with the insight or the claim.
 Rule 3: No hashtags.
-Rule 4: Max 1 emoji. Only if it adds meaning, not decoration.
+Rule 4: ZERO emojis. Never. Not one. Use ALL CAPS to emphasize key words instead.
 Rule 5: Short sentences. White space. Mobile-first.
-Rule 6: End sharp — question, stark truth, or action.
+Rule 6: End sharp — a question, a stark truth, or a provocation.
 Rule 7: Max 270 chars. Every word earns its place.
-Rule 8: NO quotes around the tweet. Return raw text only.
-Rule 9: Occasional tiny imperfection — a missing comma, dropped period at end, lowercase start. Feels human. Don't overdo it.
+Rule 8: NO quotes around the tweet. Raw text only.
+Rule 9: Occasional tiny imperfection — a missing comma, dropped period at end. Feels human. Once per tweet max.
 Rule 10: English only.
+Rule 11: No bullet-point structure. No "X% of Y" statistics unless you actually know the number. Talk like a person who's lived it.
   `.trim(),
 
   TOPICS: [

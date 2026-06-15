@@ -88,14 +88,17 @@ function isTooSimilar(newTweet, recent) {
 }
 
 function addHumanTouch(text) {
-  // Aggressively strip all quote wrapping the AI loves to add
   text = text.trim();
+  // Strip emojis — zero tolerance
+  text = text.replace(/\p{Extended_Pictographic}/gu, '').trim();
   // Remove leading/trailing standard and curly quotes (multi-pass for nested)
   for (let i = 0; i < 3; i++) {
     text = text.replace(/^["""''`]+/, '').replace(/["""''`]+$/, '').trim();
   }
   // Strip trailing punctuation+quote combos like ." or ."
   text = text.replace(/([.!?])["""'']+$/, '$1');
+  // Clean up double spaces left by emoji removal
+  text = text.replace(/  +/g, ' ').trim();
 
   const roll = Math.random();
   if (roll < 0.15 && text.endsWith('.')) text = text.slice(0, -1);
@@ -105,6 +108,19 @@ function addHumanTouch(text) {
   }
   return text;
 }
+
+const SV_TOPICS = [
+  'Y Combinator: what the public playbook gets wrong vs. what actually works',
+  'OpenAI vs Anthropic vs Google — who is actually winning the real AI race',
+  'VC culture: what Silicon Valley founders believe that nobody outside SV does',
+  'Why most SV startup advice fails if you\'re building from outside the US',
+  'Sam Altman / Elon / Zuckerberg — reading the Silicon Valley power moves',
+  'The honest case for and against moving to San Francisco as a founder',
+  'AI companies raising at insane valuations — what this actually signals',
+  'Big tech (Apple / Google / Meta) at an inflection point — what builders should do',
+  'The YC Demo Day effect vs. building in silence — which actually compounds',
+  'Silicon Valley culture vs. the rest of the world: the gap is widening',
+];
 
 function formatTrendContext(trends) {
   return [
@@ -119,7 +135,9 @@ async function generateTweet(trends, slotNumber) {
   const dedupCtx = buildDedupContext(recent);
   const styleCtx = buildStyleContext(topTweets);
   const ctx = formatTrendContext(trends);
-  const topicList = config.TOPICS.join('\n- ');
+  const isSV = process.env.SV_MODE === 'true';
+  const topicPool = isSV ? [...SV_TOPICS, ...config.TOPICS.slice(0, 3)] : config.TOPICS;
+  const topicList = topicPool.join('\n- ');
 
   for (let attempt = 0; attempt < 4; attempt++) {
     const res = await groq.chat.completions.create({
@@ -130,7 +148,7 @@ async function generateTweet(trends, slotNumber) {
         { role: 'system', content: SYSTEM },
         {
           role: 'user',
-          content: `Today's trending:\n${ctx}\n\nPossible topic areas:\n- ${topicList}\n${styleCtx}${dedupCtx}\n\nSlot #${slotNumber}. Pick ONE angle. Write Kerim's take — sharp opinion, not a summary.\nReturn ONLY the raw tweet text. No quotes around it.`,
+          content: `Today's trending:\n${ctx}\n\nPossible topic areas:\n- ${topicList}\n${styleCtx}${dedupCtx}\n\nSlot #${slotNumber}${isSV ? ' (Silicon Valley focus — speak to SV founders and tech)' : ''}. Pick ONE angle. Write Kerim's take — sharp opinion, not a summary.\nReturn ONLY the raw tweet text. No quotes, no emojis.`,
         },
       ],
     });

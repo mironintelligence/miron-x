@@ -81,7 +81,16 @@ class XClient {
     Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, String(v)));
     const res = await fetch(url.toString(), { headers: this._headers() });
     const text = await res.text();
-    if (!res.ok) throw new Error(`REST ${path} HTTP ${res.status}: ${text.substring(0, 300)}`);
+    if (!res.ok) {
+      // 404 + code 34 = Twitter "not found" for empty search results — treat as empty
+      if (res.status === 404) {
+        try {
+          const d = JSON.parse(text);
+          if (d?.errors?.[0]?.code === 34) return null;
+        } catch {}
+      }
+      throw new Error(`REST ${path} HTTP ${res.status}: ${text.substring(0, 300)}`);
+    }
     return JSON.parse(text);
   }
 
@@ -95,6 +104,9 @@ class XClient {
     };
     if (options.replyTo) {
       variables.reply = { in_reply_to_tweet_id: options.replyTo, exclude_reply_user_ids: [] };
+    }
+    if (options.quoteTweetId) {
+      variables.attachment_url = `https://x.com/i/status/${options.quoteTweetId}`;
     }
     const data = await this._gql('a1p9RWpkYKBjWv_I3WzS-A', 'CreateTweet', variables);
     const result = data?.data?.create_tweet?.tweet_results?.result;
@@ -210,17 +222,17 @@ class XClient {
   }
 
   // ─── MENTIONS ────────────────────────────────────────────────────────────
+  // Uses statuses/mentions_timeline.json — directly returns @mentions for the authenticated user.
+  // More stable than search/tweets.json which requires elevated API access.
   async *getMentions(handle, limit = 30) {
-    const clean = handle.replace('@', '');
-    const data = await this._rest('search/tweets.json', {
-      q: `@${clean} -from:${clean}`,
-      result_type: 'recent',
-      count: Math.min(limit, 100),
+    const data = await this._rest('statuses/mentions_timeline.json', {
+      count: Math.min(limit, 200),
       tweet_mode: 'extended',
     });
-    for (const tweet of data?.statuses || []) {
+    const clean = handle.replace('@', '').toLowerCase();
+    for (const tweet of data || []) {
       const authorHandle = tweet.user?.screen_name || '';
-      if (authorHandle.toLowerCase() === clean.toLowerCase()) continue;
+      if (authorHandle.toLowerCase() === clean) continue;
       yield {
         id: tweet.id_str,
         text: tweet.full_text || tweet.text || '',
