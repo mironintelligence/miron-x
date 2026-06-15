@@ -3,6 +3,22 @@ const { getTodaysTrends } = require('./trends');
 const { generateThread } = require('./generator');
 const { XClient } = require('./xclient');
 const { logError } = require('./logger');
+const fs = require('fs');
+const path = require('path');
+
+const DATA_PATH = path.join(__dirname, '../data/posted.json');
+
+function loadPosted() {
+  try { return JSON.parse(fs.readFileSync(DATA_PATH, 'utf8')); }
+  catch { return []; }
+}
+
+function saveTweet(text, id = null) {
+  const list = loadPosted().slice(-200);
+  list.push({ text, id, ts: new Date().toISOString(), type: 'thread' });
+  fs.mkdirSync(path.dirname(DATA_PATH), { recursive: true });
+  fs.writeFileSync(DATA_PATH, JSON.stringify(list, null, 2));
+}
 
 async function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
@@ -40,6 +56,7 @@ async function main() {
     try {
       const result = await x.sendTweet(tweets[i], lastId ? { replyTo: lastId } : {});
       lastId = result?.id || null;
+      saveTweet(tweets[i], lastId);
       console.log(`✅ Tweet ${i + 1}/${tweets.length} posted`);
       if (i < tweets.length - 1) await sleep(4500);
     } catch (e) {

@@ -2,7 +2,7 @@ name: Analytics — Self-Improving Loop
 
 on:
   schedule:
-    # 11pm EST / 07:00 TRT — after all tweets are posted
+    # 04:00 UTC = 07:00 TRT — runs after all daily tweets are posted
     - cron: '0 4 * * *'
   workflow_dispatch:
 
@@ -10,6 +10,11 @@ jobs:
   analytics:
     runs-on: ubuntu-latest
     permissions: { contents: write }
+    env:
+      TWITTER_HANDLE: kerimaydemirco
+      GROQ_MODEL: llama-3.3-70b-versatile
+      ANALYTICS_TOP_N: "15"
+      MIN_DATA_POINTS: "8"
     steps:
       - uses: actions/checkout@v4
 
@@ -26,16 +31,34 @@ jobs:
       - name: Pull latest data
         run: git pull --rebase origin main || true
 
-      - name: Run analytics
+      - name: 1. Track engagement (live timeline + API fallback)
         run: node src/analytics.js
         env:
           XACTIONS_SESSION_COOKIE: ${{ secrets.XACTIONS_SESSION_COOKIE }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
 
-      - name: Commit updated data
+      - name: 2. Brain analysis (find what works)
+        run: node src/brain.js
+        env:
+          XACTIONS_SESSION_COOKIE: ${{ secrets.XACTIONS_SESSION_COOKIE }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+
+      - name: 3. Self-improve (update dynamic_config + report)
+        run: node src/self-improve.js
+        env:
+          XACTIONS_SESSION_COOKIE: ${{ secrets.XACTIONS_SESSION_COOKIE }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+
+      - name: 4. Track growth (follower count snapshot)
+        run: node src/growth.js
+        env:
+          XACTIONS_SESSION_COOKIE: ${{ secrets.XACTIONS_SESSION_COOKIE }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+
+      - name: Commit all data
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add data/posted.json data/top_tweets.json
-          git diff --cached --quiet || git commit -m 'analytics: update engagement scores + top tweets'
+          git add data/
+          git diff --cached --quiet || git commit -m 'analytics: engagement + brain + self-improve + growth'
           git push || true

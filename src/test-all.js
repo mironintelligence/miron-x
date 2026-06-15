@@ -127,8 +127,15 @@ async function run() {
     const tweets = [];
     for await (const t of x.getTweets('naval', 3)) tweets.push(t);
     if (tweets[0]?.id) {
-      await x.likeTweet(tweets[0].id);
-      ok('Like tweet', `liked ID: ${tweets[0].id} — "${tweets[0].text.substring(0, 40)}"`);
+      try {
+        await x.likeTweet(tweets[0].id);
+        ok('Like tweet', `liked ID: ${tweets[0].id} — "${tweets[0].text.substring(0, 40)}"`);
+      } catch (e) {
+        // "already favorited" = like endpoint is working, just idempotent
+        if (e.message?.includes('already favorited')) {
+          ok('Like tweet', `already liked (endpoint working) — ID: ${tweets[0].id}`);
+        } else throw e;
+      }
     } else ko('Like tweet', new Error('No tweets to like'));
   } catch (e) { ko('Like tweet', e); }
   await sleep(1500);

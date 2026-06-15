@@ -1,0 +1,26 @@
+{
+  "updatedAt": "2026-06-15T15:30:41.280Z",
+  "errorAnalysis": {
+    "totalRecent": 0,
+    "byScript": {},
+    "criticalScripts": []
+  },
+  "performanceAnalysis": {
+    "status": "insufficient_data",
+    "tweetsWithEngagement": 0,
+    "bestType": null,
+    "worstType": null,
+    "recommendations": [
+      "Keep posting — brain needs more data to learn patterns"
+    ]
+  },
+  "growthAnalysis": {
+    "status": "insufficient_data",
+    "currentFollowers": 0
+  },
+  "keywordSuggestions": [],
+  "overallRecommendations": [
+    "System healthy — no critical issues found"
+  ],
+  "dynamicConfigUpdated": true
+}

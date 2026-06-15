@@ -5,10 +5,11 @@ const BEARER = 'AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Z
 
 // GraphQL query IDs (verified working 2025-06)
 const QID = {
-  CreateTweet:       'a1p9RWpkYKBjWv_I3WzS-A',
-  FavoriteTweet:     'lI07N6Otwv1PhnEgXILM7A',
-  UserByScreenName:  'qW5u-DAuXpMEG0zA1F7UGQ',
-  UserTweets:        'V7H0Ap3_Hh2FyS75OCDO3Q',
+  CreateTweet:         'a1p9RWpkYKBjWv_I3WzS-A',
+  FavoriteTweet:       'lI07N6Otwv1PhnEgXILM7A',
+  UserByScreenName:    'qW5u-DAuXpMEG0zA1F7UGQ',
+  UserTweets:          'V7H0Ap3_Hh2FyS75OCDO3Q',
+  TweetResultByRestId: 'VwKLqiECkBaVo6HsfISIGg',
 };
 
 const GQL_TWEET_FEATURES = {
@@ -259,14 +260,37 @@ class XClient {
           id: legacy.id_str || tweetResult?.rest_id,
           text: legacy.full_text || '',
           likeCount: legacy.favorite_count || 0,
+          retweetCount: legacy.retweet_count || 0,
+          replyCount: legacy.reply_count || 0,
           timeParsed: new Date(legacy.created_at),
         };
       }
     }
   }
 
-  // ─── SINGLE TWEET LOOKUP ─────────────────────────────────────────────────
+  // ─── SINGLE TWEET LOOKUP — GraphQL first, v1.1 fallback ─────────────────
   async getTweetById(tweetId) {
+    try {
+      const data = await this._gqlGet(QID.TweetResultByRestId, 'TweetResultByRestId', {
+        tweetId,
+        withCommunity: false,
+        includePromotedContent: false,
+        withVoice: false,
+      });
+      const result = data?.data?.tweetResult?.result;
+      const legacy = result?.legacy || result?.tweet?.legacy;
+      if (legacy) {
+        return {
+          id: tweetId,
+          text: legacy.full_text || '',
+          likes: legacy.favorite_count || 0,
+          retweets: legacy.retweet_count || 0,
+          replies: legacy.reply_count || 0,
+        };
+      }
+    } catch {}
+
+    // Fallback: v1.1 REST (may still work for own tweets)
     const data = await this._rest('statuses/show.json', {
       id: tweetId,
       tweet_mode: 'extended',

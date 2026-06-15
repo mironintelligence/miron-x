@@ -1,0 +1,19 @@
+{
+  "updatedAt": "2026-06-15T15:30:38.801Z",
+  "status": "insufficient_data",
+  "totalTweets": 19,
+  "tweetsWithId": 6,
+  "minRequired": 8,
+  "typeMultipliers": {
+    "general": 1,
+    "sv": 1,
+    "london": 1,
+    "wolf": 1,
+    "thread": 1
+  },
+  "topKeywords": [],
+  "formatInsights": null,
+  "recommendations": [
+    "Keep posting — brain needs more data to learn patterns"
+  ]
+}

@@ -13,9 +13,9 @@ function load() {
   catch { return []; }
 }
 
-function save(tweet, id = null) {
+function save(tweet, id = null, type = 'general') {
   const list = load().slice(-200);
-  list.push({ text: tweet, id, ts: new Date().toISOString() });
+  list.push({ text: tweet, id, ts: new Date().toISOString(), type });
   fs.mkdirSync(path.dirname(DATA_PATH), { recursive: true });
   fs.writeFileSync(DATA_PATH, JSON.stringify(list, null, 2));
 }
@@ -26,8 +26,8 @@ function isDuplicate(tweet) {
 
 async function main() {
   const slot = process.env.TWEET_SLOT || '1';
-  const mode = process.env.SV_MODE === 'true' ? 'SV' : process.env.LONDON_MODE === 'true' ? 'London' : 'general';
-  console.log(`▶ post.js — Slot #${slot} [${mode}]`);
+  const type = process.env.SV_MODE === 'true' ? 'sv' : process.env.LONDON_MODE === 'true' ? 'london' : 'general';
+  console.log(`▶ post.js — Slot #${slot} [${type}]`);
 
   let trends;
   try {
@@ -46,12 +46,12 @@ async function main() {
       console.log(`Attempt ${i + 1}: duplicate, retrying...`);
     }
   } catch (e) {
-    logError('post.js', e, { slot, phase: 'generate_tweet', mode });
+    logError('post.js', e, { slot, phase: 'generate_tweet', type });
     process.exit(1);
   }
 
   if (!tweet) {
-    logError('post.js', new Error('Could not generate unique tweet after 3 attempts'), { slot, mode });
+    logError('post.js', new Error('Could not generate unique tweet after 3 attempts'), { slot, type });
     process.exit(1);
   }
 
@@ -61,9 +61,9 @@ async function main() {
     const x = new XClient(process.env.XACTIONS_SESSION_COOKIE);
     const result = await x.sendTweet(tweet);
     console.log('✅ Posted');
-    save(tweet, result?.id || null);
+    save(tweet, result?.id || null, type);
   } catch (e) {
-    logError('post.js', e, { slot, mode, phase: 'send_tweet', tweet: tweet.substring(0, 80) });
+    logError('post.js', e, { slot, type, phase: 'send_tweet', tweet: tweet.substring(0, 80) });
     process.exit(1);
   }
 }
