@@ -194,6 +194,21 @@ class XClient {
     }
   }
 
+  // ─── SINGLE TWEET LOOKUP ─────────────────────────────────────────────────
+  async getTweetById(tweetId) {
+    const data = await this._rest('statuses/show.json', {
+      id: tweetId,
+      tweet_mode: 'extended',
+    });
+    return {
+      id: data.id_str,
+      text: data.full_text || data.text || '',
+      likes: data.favorite_count || 0,
+      retweets: data.retweet_count || 0,
+      replies: data.reply_count || 0,
+    };
+  }
+
   // ─── MENTIONS ────────────────────────────────────────────────────────────
   async *getMentions(handle, limit = 30) {
     const clean = handle.replace('@', '');

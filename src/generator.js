@@ -51,12 +51,28 @@ function loadRecentTweets(n = 40) {
   } catch { return []; }
 }
 
+// Load top performing tweets for style learning
+function loadTopTweets() {
+  try {
+    const raw = fs.readFileSync(path.join(__dirname, '../data/top_tweets.json'), 'utf8');
+    return JSON.parse(raw).slice(0, 8); // top 8
+  } catch { return []; }
+}
+
 function buildDedupContext(recent) {
   if (!recent.length) return '';
   const summaries = recent
     .map(t => t.text.replace(/^"/, '').replace(/"$/, '').substring(0, 80))
     .join('\n- ');
   return `\nAVOID repeating these recent topics/angles:\n- ${summaries}\n\nWrite something COMPLETELY different in topic AND framing.`;
+}
+
+function buildStyleContext(topTweets) {
+  if (!topTweets.length) return '';
+  const examples = topTweets
+    .map(t => `[${t.likes}❤ ${t.retweets}RT] ${t.text.substring(0, 100)}`)
+    .join('\n');
+  return `\nHIGH-PERFORMING TWEETS — study their structure, tone, hook style:\n${examples}\n\nMatch this energy and format. Different topic, same sharpness.`;
 }
 
 // Simple keyword similarity check
@@ -99,7 +115,9 @@ function formatTrendContext(trends) {
 
 async function generateTweet(trends, slotNumber) {
   const recent = loadRecentTweets(40);
+  const topTweets = loadTopTweets();
   const dedupCtx = buildDedupContext(recent);
+  const styleCtx = buildStyleContext(topTweets);
   const ctx = formatTrendContext(trends);
   const topicList = config.TOPICS.join('\n- ');
 
@@ -112,7 +130,7 @@ async function generateTweet(trends, slotNumber) {
         { role: 'system', content: SYSTEM },
         {
           role: 'user',
-          content: `Today's trending:\n${ctx}\n\nPossible topic areas:\n- ${topicList}\n${dedupCtx}\n\nSlot #${slotNumber} of 6. Pick ONE angle. Write Kerim's take — not a summary, his opinion.\nReturn ONLY the raw tweet text. No quotes around it.`,
+          content: `Today's trending:\n${ctx}\n\nPossible topic areas:\n- ${topicList}\n${styleCtx}${dedupCtx}\n\nSlot #${slotNumber}. Pick ONE angle. Write Kerim's take — sharp opinion, not a summary.\nReturn ONLY the raw tweet text. No quotes around it.`,
         },
       ],
     });
@@ -121,7 +139,7 @@ async function generateTweet(trends, slotNumber) {
     console.log(`  Attempt ${attempt + 1}: too similar, retrying...`);
   }
 
-  // Fallback: force a different angle
+  // Fallback: force a different topic
   const forcedTopic = config.TOPICS[Math.floor(Math.random() * config.TOPICS.length)];
   const res = await groq.chat.completions.create({
     model: 'llama-3.3-70b-versatile',
@@ -129,7 +147,7 @@ async function generateTweet(trends, slotNumber) {
     temperature: 0.95,
     messages: [
       { role: 'system', content: SYSTEM },
-      { role: 'user', content: `Write a tweet specifically about: ${forcedTopic}\nReturn ONLY the raw tweet text.` },
+      { role: 'user', content: `Write a tweet about: ${forcedTopic}\nReturn ONLY the raw tweet text. No quotes.` },
     ],
   });
   return addHumanTouch(res.choices[0].message.content.trim());
@@ -147,13 +165,18 @@ async function generateWolfTweet() {
     'Raw tweet: what chaos actually feels like from the inside of it.',
   ];
   const prompt = prompts[Math.floor(Math.random() * prompts.length)];
+
+  // Pull wolf-type top tweets for style reference
+  const topTweets = loadTopTweets().filter(t => t.type === 'wolf');
+  const styleCtx = buildStyleContext(topTweets);
+
   const res = await groq.chat.completions.create({
     model: 'llama-3.3-70b-versatile',
     max_tokens: 140,
     temperature: 0.92,
     messages: [
       { role: 'system', content: WOLF_SYSTEM },
-      { role: 'user', content: `${prompt}\nMax 220 chars. Return ONLY raw tweet text. No quotes.` },
+      { role: 'user', content: `${prompt}\n${styleCtx}Max 220 chars. Return ONLY raw tweet text. No quotes.` },
     ],
   });
   return addHumanTouch(res.choices[0].message.content.trim());

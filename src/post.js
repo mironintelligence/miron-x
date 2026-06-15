@@ -12,9 +12,9 @@ function load() {
   catch { return []; }
 }
 
-function save(tweet) {
-  const list = load().slice(-150);
-  list.push({ text: tweet, ts: new Date().toISOString() });
+function save(tweet, id = null) {
+  const list = load().slice(-200);
+  list.push({ text: tweet, id, ts: new Date().toISOString() });
   fs.mkdirSync(path.dirname(DATA_PATH), { recursive: true });
   fs.writeFileSync(DATA_PATH, JSON.stringify(list, null, 2));
 }
@@ -45,9 +45,9 @@ async function main() {
   console.log(`Tweet (${tweet.length}c):\n${tweet}\n`);
 
   const x = new XClient(process.env.XACTIONS_SESSION_COOKIE);
-  await x.sendTweet(tweet);
+  const result = await x.sendTweet(tweet);
   console.log('✅ Posted');
-  save(tweet);
+  save(tweet, result?.id || null);
 }
 
 if (require.main === module) {
