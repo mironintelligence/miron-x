@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "ts": "2026-06-15T17:56:59.141Z",
+    "script": "engage.js",
+    "error": "Could not resolve userId for @dklinefelter",
+    "phase": "reply",
+    "account": "dklinefelter"
+  },
+  {
+    "ts": "2026-06-15T17:57:32.563Z",
+    "script": "engage.js",
+    "error": "Could not resolve userId for @marc_louvion",
+    "phase": "reply",
+    "account": "marc_louvion"
+  }
+]
