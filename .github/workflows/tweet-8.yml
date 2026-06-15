@@ -2,7 +2,7 @@ name: Tweet 8 - 9am PDT Silicon Valley Morning
 
 on:
   schedule:
-    - cron: '0 16 * * *'   # 9am PDT (UTC-7) / 12pm EST
+    - cron: '0 16 * * *'   # 9am PDT / 12pm EST / 19:00 TRT  [Silicon Valley]
   workflow_dispatch:
 
 jobs:

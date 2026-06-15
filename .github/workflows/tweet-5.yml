@@ -1,7 +1,7 @@
 name: 📤 Tweet 5 - 10pm EST
 on:
   schedule:
-    - cron: '0 2 * * *'    # 10pm EST / 7pm PST
+    - cron: '0 2 * * *'    # 10pm EST / 7pm PST / 05:00 TRT
   workflow_dispatch:
 
 jobs:

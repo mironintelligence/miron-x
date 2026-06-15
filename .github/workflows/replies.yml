@@ -1,9 +1,9 @@
 name: 💬 Mention Replies
 on:
   schedule:
-    - cron: '0 14 * * *'   # 10am EST — check morning mentions
-    - cron: '0 19 * * *'   # 3pm EST — check afternoon mentions
-    - cron: '0 23 * * *'   # 7pm EST — check evening mentions
+    - cron: '0 14 * * *'   # 10am EST / 17:00 TRT
+    - cron: '0 19 * * *'   # 3pm EST / 22:00 TRT
+    - cron: '0 23 * * *'   # 7pm EST / 02:00 TRT
   workflow_dispatch:
 
 jobs:

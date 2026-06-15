@@ -1,9 +1,9 @@
 name: 🤝 Engagement Routines
 on:
   schedule:
-    - cron: '0 13 * * *'   # 9am EST — full (like+reply)
-    - cron: '0 17 * * *'   # 1pm EST — like only
-    - cron: '0 22 * * *'   # 6pm EST — reply only
+    - cron: '0 13 * * *'   # 9am EST — full (like+reply) / 16:00 TRT
+    - cron: '0 17 * * *'   # 1pm EST — like only / 20:00 TRT
+    - cron: '0 22 * * *'   # 6pm EST — reply only / 01:00 TRT
   workflow_dispatch:
     inputs:
       mode:

@@ -2,7 +2,7 @@ name: Tweet 9 - 12pm PST Silicon Valley Midday
 
 on:
   schedule:
-    - cron: '0 19 * * *'   # 12pm PDT (UTC-7) / 3pm EST
+    - cron: '0 19 * * *'   # 12pm PDT / 3pm EST / 22:00 TRT  [Silicon Valley]
   workflow_dispatch:
 
 jobs:

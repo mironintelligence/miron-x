@@ -2,7 +2,7 @@ name: Analytics — Self-Improving Loop
 
 on:
   schedule:
-    # 11pm EST daily (3am UTC next day) — after all tweets are posted
+    # 11pm EST / 07:00 TRT — after all tweets are posted
     - cron: '0 4 * * *'
   workflow_dispatch:
 

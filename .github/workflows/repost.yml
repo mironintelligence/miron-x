@@ -1,7 +1,7 @@
 name: 🔁 Daily Quote-Repost
 on:
   schedule:
-    - cron: '0 20 * * *'   # 4pm EST — afternoon repost
+    - cron: '0 20 * * *'   # 4pm EST — afternoon repost / 23:00 TRT
   workflow_dispatch:
 
 jobs:
