@@ -72,13 +72,17 @@ function isTooSimilar(newTweet, recent) {
 }
 
 function addHumanTouch(text) {
-  // Remove surrounding quotes if AI added them
-  text = text.trim().replace(/^["'""]/, '').replace(/["'""]$/, '');
+  // Aggressively strip all quote wrapping the AI loves to add
+  text = text.trim();
+  // Remove leading/trailing standard and curly quotes (multi-pass for nested)
+  for (let i = 0; i < 3; i++) {
+    text = text.replace(/^["""''`]+/, '').replace(/["""''`]+$/, '').trim();
+  }
+  // Strip trailing punctuation+quote combos like ." or ."
+  text = text.replace(/([.!?])["""'']+$/, '$1');
 
   const roll = Math.random();
-  // 15% chance: drop trailing period
   if (roll < 0.15 && text.endsWith('.')) text = text.slice(0, -1);
-  // 10% chance: drop one random comma
   else if (roll < 0.25 && text.includes(',')) {
     const idx = text.indexOf(',');
     text = text.slice(0, idx) + text.slice(idx + 1);

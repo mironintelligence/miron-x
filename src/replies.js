@@ -1,11 +1,12 @@
 require('dotenv').config();
 const { XClient } = require('./xclient');
 const { generateMentionReply } = require('./generator');
+const config = require('./config');
 const fs = require('fs');
 const path = require('path');
 
 const LOG_PATH = path.join(__dirname, '../data/engaged.json');
-const HANDLE = 'kerimaydemir';
+const HANDLE = config.HANDLE;
 
 // Küfürlü / spam / anlamsız içerik filtresi
 const BLOCK_PATTERNS = [

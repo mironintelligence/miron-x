@@ -1,5 +1,5 @@
 module.exports = {
-  HANDLE: 'kerimaydemir',
+  HANDLE: 'kerimaydemirco',
 
   PERSONA: {
     name: 'Kerim Aydemir',
