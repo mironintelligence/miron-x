@@ -1,5 +1,5 @@
 module.exports = {
-  HANDLE: 'kerimaydemirco',
+  HANDLE: process.env.TWITTER_HANDLE || 'kerimaydemirco',
 
   PERSONA: {
     name: 'Kerim Aydemir',

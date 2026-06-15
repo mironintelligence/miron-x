@@ -8,6 +8,10 @@ const path = require('path');
 
 const LOG_PATH = path.join(__dirname, '../data/engaged.json');
 
+const MAX_LIKES   = parseInt(process.env.MAX_LIKES_PER_SESSION   || '12');
+const MAX_REPLIES = parseInt(process.env.MAX_REPLIES_PER_SESSION || '3');
+const MAX_FOLLOWS = parseInt(process.env.MAX_FOLLOWS_PER_DAY     || '1');
+
 function loadLog() {
   try { return JSON.parse(fs.readFileSync(LOG_PATH, 'utf8')); }
   catch { return { replies: [], likes: [], follows: [], followDates: [] }; }
@@ -15,10 +19,10 @@ function loadLog() {
 
 function saveLog(log) {
   fs.mkdirSync(path.dirname(LOG_PATH), { recursive: true });
-  log.likes = (log.likes || []).slice(-500);
-  log.follows = (log.follows || []).slice(-200);
-  log.replies = (log.replies || []).slice(-200);
-  log.followDates = (log.followDates || []).slice(-100);
+  log.likes      = (log.likes      || []).slice(-500);
+  log.follows    = (log.follows    || []).slice(-200);
+  log.replies    = (log.replies    || []).slice(-200);
+  log.followDates= (log.followDates|| []).slice(-100);
   fs.writeFileSync(LOG_PATH, JSON.stringify(log, null, 2));
 }
 
@@ -37,29 +41,38 @@ async function collectAsync(gen, limit) {
 
 async function main() {
   const mode = process.env.ENGAGE_MODE || 'all';
-  console.log(`▶ engage.js — Mode: ${mode}`);
+  console.log(`▶ engage.js — Mode: ${mode} | limits: ${MAX_LIKES} likes / ${MAX_REPLIES} replies / ${MAX_FOLLOWS} follows`);
 
   const x = new XClient(process.env.XACTIONS_SESSION_COOKIE);
   const log = loadLog();
 
-  // ─── LIKE ──────────────────────────────────────────────────────────────
+  // ─── LIKE ─────────────────────────────────────────────────────────────────
   if (mode === 'all' || mode === 'like') {
     console.log('Like rutini...');
     const kw = config.SEARCH_KEYWORDS[Math.floor(Math.random() * config.SEARCH_KEYWORDS.length)];
+    console.log(`  Keyword: "${kw}"`);
     let liked = 0;
     try {
-      const tweets = await collectAsync(x.searchTweets(kw, 25), 25);
+      const tweets = await collectAsync(x.searchTweets(kw, 30), 30);
+      if (tweets.length === 0) {
+        console.log('  Search returned 0 results (v1.1 restricted) — skipping likes');
+      }
       for (const t of tweets) {
-        if (liked >= 12) break;
+        if (liked >= MAX_LIKES) break;
         if (!t.id || done(t.id, 'likes', log)) continue;
-        if ((t.likeCount || 0) < 5) continue;
+        if ((t.likeCount || 0) < 3) continue;
         try {
           await x.likeTweet(t.id);
           log.likes.push(String(t.id));
           liked++;
           await sleep(2800);
         } catch (e) {
-          logError('engage.js', e, { phase: 'like', tweetId: t.id, keyword: kw });
+          if (e.message?.includes('already favorited')) {
+            log.likes.push(String(t.id));
+            liked++;
+          } else {
+            logError('engage.js', e, { phase: 'like', tweetId: t.id, keyword: kw });
+          }
         }
       }
     } catch (e) {
@@ -68,31 +81,31 @@ async function main() {
     console.log(`  ✅ ${liked} likes`);
   }
 
-  // ─── REPLY ─────────────────────────────────────────────────────────────
+  // ─── REPLY ────────────────────────────────────────────────────────────────
   if (mode === 'all' || mode === 'reply') {
     console.log('Reply rutini...');
-    const targets = [...config.TARGET_ACCOUNTS].sort(() => Math.random() - 0.5).slice(0, 5);
+    const targets = [...config.TARGET_ACCOUNTS].sort(() => Math.random() - 0.5).slice(0, 6);
     let replied = 0;
 
     for (const account of targets) {
-      if (replied >= 3) break;
+      if (replied >= MAX_REPLIES) break;
       try {
         const tweets = await collectAsync(x.getTweets(account, 5), 5);
-        await sleep(2000);
+        await sleep(1500);
         const recent = tweets.find(t => {
           const hoursOld = (Date.now() - new Date(t.timeParsed).getTime()) / 3600000;
           return hoursOld < 36 && !done(t.id, 'replies', log);
         });
-        if (!recent) continue;
+        if (!recent) { console.log(`  ↩ @${account}: no recent tweet`); continue; }
 
         const reply = await generateReply(recent.text || '', account);
-        if (!reply) { console.log(`  ↩ @${account}: SKIP`); continue; }
+        if (!reply) { console.log(`  ↩ @${account}: SKIP`); log.replies.push(String(recent.id)); continue; }
 
         await x.sendTweet(reply, { replyTo: recent.id });
         log.replies.push(String(recent.id));
         replied++;
-        console.log(`  ✅ @${account}: ${reply.substring(0, 55)}`);
-        await sleep(12000);
+        console.log(`  ✅ @${account}: ${reply.substring(0, 60)}`);
+        await sleep(10000);
       } catch (e) {
         logError('engage.js', e, { phase: 'reply', account });
       }
@@ -100,28 +113,31 @@ async function main() {
     console.log(`  ✅ ${replied} replies`);
   }
 
-  // ─── FOLLOW — sadece elle tetiklenince ─────────────────────────────────
+  // ─── FOLLOW — sadece elle tetiklenince ────────────────────────────────────
   if (mode === 'follow') {
     console.log('Follow rutini (seçici mod)...');
     const todayKey = new Date().toISOString().slice(0, 10);
     const todayFollows = (log.followDates || []).filter(d => d === todayKey).length;
 
-    if (todayFollows >= 1) {
-      console.log('  Bugün zaten follow yapıldı');
+    if (todayFollows >= MAX_FOLLOWS) {
+      console.log(`  Bugün zaten ${todayFollows} follow yapıldı (limit: ${MAX_FOLLOWS})`);
     } else {
       let followed = 0;
       try {
         const tweets = await collectAsync(x.searchTweets('building AI product bootstrapped', 40), 40);
+        if (tweets.length === 0) {
+          console.log('  Search returned 0 results (v1.1 restricted) — skipping follow');
+        }
         for (const t of tweets) {
-          if (followed >= 1) break;
+          if (followed >= MAX_FOLLOWS) break;
           if (!t.username || done(t.username, 'follows', log)) continue;
           try {
             const profile = await x.getProfile(t.username);
-            await sleep(2000);
-            const fc = profile.followersCount || 0;
+            await sleep(1500);
+            const fc  = profile.followersCount || 0;
             const bio = (profile.biography || '').toLowerCase();
-            const relevant = ['build', 'founder', 'ai', 'saas', 'startup', 'maker'].some(kw => bio.includes(kw));
-            if (fc >= 2000 && fc <= 25000 && bio.length > 30 && relevant) {
+            const relevant = ['build', 'founder', 'ai', 'saas', 'startup', 'maker'].some(k => bio.includes(k));
+            if (fc >= 2000 && fc <= 30000 && bio.length > 30 && relevant) {
               await x.followUser(t.username);
               log.follows.push(t.username);
               log.followDates.push(todayKey);
@@ -141,7 +157,7 @@ async function main() {
   }
 
   saveLog(log);
-  console.log('Log saved');
+  console.log('✅ Engage complete');
 }
 
 if (require.main === module) {
