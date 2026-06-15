@@ -6,5 +6,6 @@
   "likes": [],
   "follows": [],
   "followDates": [],
-  "reposts": []
+  "reposts": [],
+  "mentionReplies": []
 }
