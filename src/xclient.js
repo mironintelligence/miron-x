@@ -1,9 +1,9 @@
-// Direct Twitter internal GraphQL client — no xactions dependency
-// Uses the same endpoints the web client uses
+// Direct Twitter client — v1.1 REST + GraphQL hybrid
+// v1.1 REST for read ops (stable), GraphQL for write ops (CreateTweet)
 
 const BEARER = 'AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA';
 
-const FEATURES = {
+const GQL_FEATURES = {
   rweb_tipjar_consumption_enabled: true,
   responsive_web_graphql_exclude_directive_enabled: true,
   verified_phone_label_enabled: false,
@@ -37,11 +37,11 @@ const FEATURES = {
 
 class XClient {
   constructor(cookieString) {
-    // cookieString = "auth_token=XXX; ct0=YYY"
+    if (!cookieString) throw new Error('XACTIONS_SESSION_COOKIE is not set');
     this.cookies = cookieString;
     const ct0Match = cookieString.match(/ct0=([^;]+)/);
     this.ct0 = ct0Match ? ct0Match[1].trim() : null;
-    if (!this.ct0) throw new Error('ct0 not found in cookie string');
+    if (!this.ct0) throw new Error('ct0 not found in cookie string — format: auth_token=X; ct0=Y');
   }
 
   _headers(extra = {}) {
@@ -53,33 +53,39 @@ class XClient {
       'x-twitter-active-user': 'yes',
       'x-twitter-auth-type': 'OAuth2Session',
       'x-twitter-client-language': 'en',
-      'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+      'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
       'referer': 'https://x.com/',
       'origin': 'https://x.com',
       ...extra,
     };
   }
 
-  async _gql(queryId, opName, variables, method = 'POST') {
+  // GraphQL — for write operations (CreateTweet, FavoriteTweet)
+  async _gql(queryId, opName, variables) {
     const url = `https://x.com/i/api/graphql/${queryId}/${opName}`;
-    if (method === 'GET') {
-      const params = new URLSearchParams({
-        variables: JSON.stringify(variables),
-        features: JSON.stringify(FEATURES),
-      });
-      const res = await fetch(`${url}?${params}`, { headers: this._headers() });
-      if (!res.ok) throw new Error(`${opName} failed: ${res.status} ${await res.text()}`);
-      return res.json();
-    }
     const res = await fetch(url, {
       method: 'POST',
       headers: this._headers(),
-      body: JSON.stringify({ variables, features: FEATURES, queryId }),
+      body: JSON.stringify({ variables, features: GQL_FEATURES, queryId }),
     });
-    if (!res.ok) throw new Error(`${opName} failed: ${res.status} ${await res.text()}`);
-    return res.json();
+    const text = await res.text();
+    if (!res.ok) throw new Error(`${opName} HTTP ${res.status}: ${text.substring(0, 300)}`);
+    const data = JSON.parse(text);
+    if (data?.errors?.length) throw new Error(`${opName} error: ${data.errors[0]?.message}`);
+    return data;
   }
 
+  // v1.1 REST — for read operations (search, timeline, profile) — more stable
+  async _rest(path, params = {}) {
+    const url = new URL(`https://api.twitter.com/1.1/${path}`);
+    Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, String(v)));
+    const res = await fetch(url.toString(), { headers: this._headers() });
+    const text = await res.text();
+    if (!res.ok) throw new Error(`REST ${path} HTTP ${res.status}: ${text.substring(0, 300)}`);
+    return JSON.parse(text);
+  }
+
+  // ─── TWEET ───────────────────────────────────────────────────────────────
   async sendTweet(text, options = {}) {
     const variables = {
       tweet_text: text,
@@ -92,135 +98,121 @@ class XClient {
     }
     const data = await this._gql('a1p9RWpkYKBjWv_I3WzS-A', 'CreateTweet', variables);
     const result = data?.data?.create_tweet?.tweet_results?.result;
-    return { id: result?.rest_id || result?.legacy?.id_str || null };
+    if (!result) throw new Error(`Tweet not posted — response: ${JSON.stringify(data).substring(0, 200)}`);
+    const id = result?.rest_id || result?.legacy?.id_str;
+    console.log(`  → Posted ID: ${id}`);
+    return { id };
   }
 
+  // ─── LIKE ────────────────────────────────────────────────────────────────
   async likeTweet(tweetId) {
-    // Need user ID from twid cookie: u%3D<userId>
     const twidMatch = this.cookies.match(/twid=u%3D(\d+)/);
     const userId = twidMatch ? twidMatch[1] : null;
     if (!userId) throw new Error('twid cookie not found — cannot like');
     await this._gql('lI07N6Otwv1PhnEgXILM7A', 'FavoriteTweet', { tweet_id: tweetId, userId });
   }
 
-  async followUser(username) {
-    // First get user ID
-    const profile = await this.getProfile(username);
-    const userId = profile.id;
-    if (!userId) throw new Error(`Cannot resolve ID for @${username}`);
-
-    const body = new URLSearchParams({ user_id: userId });
-    const res = await fetch('https://x.com/i/api/1.1/friendships/create.json', {
+  // ─── RETWEET ─────────────────────────────────────────────────────────────
+  async retweet(tweetId) {
+    const body = new URLSearchParams({ id: tweetId });
+    const res = await fetch(`https://api.twitter.com/1.1/statuses/retweet/${tweetId}.json`, {
       method: 'POST',
       headers: this._headers({ 'content-type': 'application/x-www-form-urlencoded' }),
       body: body.toString(),
     });
-    if (!res.ok) throw new Error(`Follow failed: ${res.status}`);
+    if (!res.ok) {
+      const t = await res.text();
+      throw new Error(`Retweet failed ${res.status}: ${t.substring(0, 200)}`);
+    }
+    return res.json();
   }
 
+  // ─── FOLLOW ──────────────────────────────────────────────────────────────
+  async followUser(username) {
+    const body = new URLSearchParams({ screen_name: username.replace('@', '') });
+    const res = await fetch('https://api.twitter.com/1.1/friendships/create.json', {
+      method: 'POST',
+      headers: this._headers({ 'content-type': 'application/x-www-form-urlencoded' }),
+      body: body.toString(),
+    });
+    if (!res.ok) {
+      const t = await res.text();
+      throw new Error(`Follow failed ${res.status}: ${t.substring(0, 200)}`);
+    }
+  }
+
+  // ─── PROFILE ─────────────────────────────────────────────────────────────
   async getProfile(username) {
-    const clean = username.replace('@', '');
-    const data = await this._gql('xc8f1g7BYqr6VTzTbvNLGg', 'UserByScreenName',
-      { screen_name: clean, withSafetyModeUserFields: true }, 'GET'
-    );
-    const u = data?.data?.user?.result?.legacy;
-    const id = data?.data?.user?.result?.rest_id;
+    const data = await this._rest('users/show.json', {
+      screen_name: username.replace('@', ''),
+      include_entities: false,
+    });
     return {
-      id,
-      name: u?.name,
-      username: u?.screen_name,
-      followersCount: u?.followers_count || 0,
-      biography: u?.description || '',
+      id: data.id_str,
+      name: data.name,
+      username: data.screen_name,
+      followersCount: data.followers_count || 0,
+      biography: data.description || '',
     };
   }
 
+  // ─── SEARCH ──────────────────────────────────────────────────────────────
   async *searchTweets(query, limit = 20) {
-    const variables = {
-      rawQuery: query,
-      count: Math.min(limit, 20),
-      querySource: 'typed_query',
-      product: 'Latest',
-    };
-    const data = await this._gql('gkjsKepM6gl_HmFWoWKfgg', 'SearchTimeline', variables, 'GET');
-    const instructions = data?.data?.search_by_raw_query?.search_timeline?.timeline?.instructions || [];
-    for (const instr of instructions) {
-      for (const entry of instr.entries || []) {
-        const tweet = entry?.content?.itemContent?.tweet_results?.result?.legacy;
-        const id = entry?.content?.itemContent?.tweet_results?.result?.rest_id;
-        const username = entry?.content?.itemContent?.tweet_results?.result?.core?.user_results?.result?.legacy?.screen_name;
-        if (tweet && id) {
-          yield {
-            id,
-            text: tweet.full_text || tweet.text || '',
-            likeCount: tweet.favorite_count || 0,
-            username,
-            timeParsed: tweet.created_at ? new Date(tweet.created_at) : new Date(),
-          };
-        }
-      }
+    const data = await this._rest('search/tweets.json', {
+      q: query,
+      result_type: 'recent',
+      count: Math.min(limit, 100),
+      tweet_mode: 'extended',
+    });
+    for (const tweet of data?.statuses || []) {
+      yield {
+        id: tweet.id_str,
+        text: tweet.full_text || tweet.text || '',
+        likeCount: tweet.favorite_count || 0,
+        username: tweet.user?.screen_name,
+        timeParsed: new Date(tweet.created_at),
+      };
     }
   }
 
+  // ─── USER TIMELINE ───────────────────────────────────────────────────────
   async *getTweets(username, limit = 10) {
-    const profile = await this.getProfile(username);
-    if (!profile.id) return;
-    const variables = {
-      userId: profile.id,
-      count: Math.min(limit, 20),
-      includePromotedContent: false,
-      withQuickPromoteEligibilityTweetFields: true,
-      withVoice: true,
-      withV2Timeline: true,
-    };
-    const data = await this._gql('E3opETHurmVJflFsUBVuUQ', 'UserTweets', variables, 'GET');
-    const instructions = data?.data?.user?.result?.timeline_v2?.timeline?.instructions || [];
-    for (const instr of instructions) {
-      for (const entry of instr.entries || []) {
-        const result = entry?.content?.itemContent?.tweet_results?.result;
-        const tweet = result?.legacy;
-        const id = result?.rest_id;
-        if (tweet && id && !tweet.retweeted_status_id_str) {
-          yield {
-            id,
-            text: tweet.full_text || tweet.text || '',
-            likeCount: tweet.favorite_count || 0,
-            timeParsed: tweet.created_at ? new Date(tweet.created_at) : new Date(),
-          };
-        }
-      }
+    const tweets = await this._rest('statuses/user_timeline.json', {
+      screen_name: username.replace('@', ''),
+      count: Math.min(limit, 200),
+      tweet_mode: 'extended',
+      exclude_replies: false,
+      include_rts: false,
+    });
+    for (const tweet of tweets || []) {
+      yield {
+        id: tweet.id_str,
+        text: tweet.full_text || tweet.text || '',
+        likeCount: tweet.favorite_count || 0,
+        timeParsed: new Date(tweet.created_at),
+      };
     }
   }
 
-  // Get mentions — searches for tweets replying to/mentioning the handle
+  // ─── MENTIONS ────────────────────────────────────────────────────────────
   async *getMentions(handle, limit = 30) {
     const clean = handle.replace('@', '');
-    // Search for replies directed at this account in last 24h
-    const query = `@${clean} -from:${clean}`;
-    const variables = {
-      rawQuery: query,
-      count: Math.min(limit, 30),
-      querySource: 'typed_query',
-      product: 'Latest',
-    };
-    const data = await this._gql('gkjsKepM6gl_HmFWoWKfgg', 'SearchTimeline', variables, 'GET');
-    const instructions = data?.data?.search_by_raw_query?.search_timeline?.timeline?.instructions || [];
-    for (const instr of instructions) {
-      for (const entry of instr.entries || []) {
-        const result = entry?.content?.itemContent?.tweet_results?.result;
-        const tweet = result?.legacy;
-        const id = result?.rest_id;
-        const authorHandle = result?.core?.user_results?.result?.legacy?.screen_name;
-        if (tweet && id && authorHandle && authorHandle.toLowerCase() !== clean.toLowerCase()) {
-          yield {
-            id,
-            text: tweet.full_text || tweet.text || '',
-            username: authorHandle,
-            likeCount: tweet.favorite_count || 0,
-            replyCount: tweet.reply_count || 0,
-            timeParsed: tweet.created_at ? new Date(tweet.created_at) : new Date(),
-          };
-        }
-      }
+    const data = await this._rest('search/tweets.json', {
+      q: `@${clean} -from:${clean}`,
+      result_type: 'recent',
+      count: Math.min(limit, 100),
+      tweet_mode: 'extended',
+    });
+    for (const tweet of data?.statuses || []) {
+      const authorHandle = tweet.user?.screen_name || '';
+      if (authorHandle.toLowerCase() === clean.toLowerCase()) continue;
+      yield {
+        id: tweet.id_str,
+        text: tweet.full_text || tweet.text || '',
+        username: authorHandle,
+        likeCount: tweet.favorite_count || 0,
+        timeParsed: new Date(tweet.created_at),
+      };
     }
   }
 }
