@@ -55,24 +55,43 @@ Rule 11: No bullet-point structure. No "X% of Y" statistics unless you actually 
   ],
 
   TARGET_ACCOUNTS: [
+    // Big names
     'sama', 'karpathy', 'naval', 'paulg', 'garrytan',
-    'levelsio', 'marc_louvion', 'tibo_maker', 'shl', 'benedictevans',
-    'dhh', 'hnshah', 'amasad', 'mwseibel', 'Jason',
-    'iamharaldur', 'stephsmithio', 'dvassallo',
-    'elonmusk', 'andreessen',
+    'elonmusk', 'andreessen', 'benedictevans',
+    // Indie / builder scene
+    'levelsio', 'marc_louvion', 'tibo_maker', 'shl', 'dvassallo',
+    'hnshah', 'amasad', 'mwseibel', 'Jason',
+    'iamharaldur', 'stephsmithio', 'patio11', 'swyx',
+    // SV small founders
+    'emmabostian', 'fortelabs', 'shreyas', 'dklinefelter',
+    // London / UK founders
+    'paddycosgrave', 'jasonlk', 'ric_burton',
+    'alexisohanian', 'jmj', 'robjama',
   ],
 
+  // Keywords for finding small/early founders to like & engage with
   SEARCH_KEYWORDS: [
+    // SV early founder discovery
+    'building my startup',
+    'bootstrapped founder',
+    'indie hacker shipped',
+    'pre-seed startup building',
+    'solofounder building',
+    // London / UK founder discovery
+    'London startup founder',
+    'UK founder building',
+    'UK bootstrapped',
+    'London tech founder',
+    // Shared pain points — will find real builders
+    'startup PMF struggle',
+    'early stage no customers',
+    'founder distribution problem',
+    'building in public week',
+    // AI builders
     'AI startup building',
-    'LLM production failure',
-    'AI agents shipped',
-    'founder bootstrapped AI',
-    'marketing growth loop',
-    'startup PMF',
-    'vibe coding real product',
-    'autonomous AI shipped',
+    'LLM production shipped',
     'Claude API building',
-    'startup marketing tactics',
+    'vibe coding real product',
   ],
 
   RSS_FEEDS: [

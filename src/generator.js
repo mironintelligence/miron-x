@@ -110,16 +110,37 @@ function addHumanTouch(text) {
 }
 
 const SV_TOPICS = [
+  // Big picture SV
   'Y Combinator: what the public playbook gets wrong vs. what actually works',
   'OpenAI vs Anthropic vs Google — who is actually winning the real AI race',
-  'VC culture: what Silicon Valley founders believe that nobody outside SV does',
-  'Why most SV startup advice fails if you\'re building from outside the US',
   'Sam Altman / Elon / Zuckerberg — reading the Silicon Valley power moves',
-  'The honest case for and against moving to San Francisco as a founder',
   'AI companies raising at insane valuations — what this actually signals',
-  'Big tech (Apple / Google / Meta) at an inflection point — what builders should do',
-  'The YC Demo Day effect vs. building in silence — which actually compounds',
-  'Silicon Valley culture vs. the rest of the world: the gap is widening',
+  // Small SV founders — the network we actually want
+  'The early SV founder nobody writes about: pre-revenue, post-savings, still building',
+  'What YC rejections have in common — and what the accepted ones missed',
+  'Distribution is the thing most SV early-stage founders underestimate until month 8',
+  'The gap between YC advice and what the first 6 months of building actually looks like',
+  'Bootstrapped in SF: the founder who doesn\'t raise and why that\'s harder than it sounds',
+  'Cold outreach in SV: what works, what burns bridges, what founders get wrong',
+  'Build in public with 40 followers — what it actually takes vs. the myth',
+  'Pre-seed to seed: the jump that breaks most first-time SV founders',
+];
+
+const LONDON_TOPICS = [
+  // London ecosystem
+  'London startup scene vs. Silicon Valley — why the comparison is both wrong and right',
+  'Wise, Monzo, Revolut: what the London fintech playbook actually looks like',
+  'UK AI scene right now — who\'s doing real work vs. riding the hype',
+  'Building in London: the advantages nobody in SV talks about (talent, timezone, regulation)',
+  'UK pre-seed landscape — what\'s actually fundable right now vs. 2 years ago',
+  // Small London founders — the real network
+  'The London indie founder: smaller market, sharper product, longer game',
+  'UK founders raising from US VCs — the things they don\'t tell you going in',
+  'European founder mindset vs. US: different constraints, different strengths',
+  'What bootstrapping looks like in London when you can\'t afford to move to SF',
+  'The honest struggles of early-stage UK startups: distribution, sales, finding customers',
+  'London\'s quiet builder community — the people shipping real products without the noise',
+  'UK founder communities worth being part of — and what they actually do for you',
 ];
 
 function formatTrendContext(trends) {
@@ -136,7 +157,12 @@ async function generateTweet(trends, slotNumber) {
   const styleCtx = buildStyleContext(topTweets);
   const ctx = formatTrendContext(trends);
   const isSV = process.env.SV_MODE === 'true';
-  const topicPool = isSV ? [...SV_TOPICS, ...config.TOPICS.slice(0, 3)] : config.TOPICS;
+  const isLondon = process.env.LONDON_MODE === 'true';
+  const topicPool = isLondon
+    ? [...LONDON_TOPICS, ...config.TOPICS.slice(0, 2)]
+    : isSV
+    ? [...SV_TOPICS, ...config.TOPICS.slice(0, 2)]
+    : config.TOPICS;
   const topicList = topicPool.join('\n- ');
 
   for (let attempt = 0; attempt < 4; attempt++) {
@@ -148,7 +174,7 @@ async function generateTweet(trends, slotNumber) {
         { role: 'system', content: SYSTEM },
         {
           role: 'user',
-          content: `Today's trending:\n${ctx}\n\nPossible topic areas:\n- ${topicList}\n${styleCtx}${dedupCtx}\n\nSlot #${slotNumber}${isSV ? ' (Silicon Valley focus — speak to SV founders and tech)' : ''}. Pick ONE angle. Write Kerim's take — sharp opinion, not a summary.\nReturn ONLY the raw tweet text. No quotes, no emojis.`,
+          content: `Today's trending:\n${ctx}\n\nPossible topic areas:\n- ${topicList}\n${styleCtx}${dedupCtx}\n\nSlot #${slotNumber}${isSV ? ' (Silicon Valley focus — speak to SV founders, early-stage builders, indie hackers)' : isLondon ? ' (London focus — speak to UK/London startup founders, early-stage builders)' : ''}. Pick ONE angle. Write Kerim's take — sharp opinion, not a summary. Speak TO founders, not about them.\nReturn ONLY the raw tweet text. No quotes, no emojis.`,
         },
       ],
     });
