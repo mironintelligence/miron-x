@@ -1,7 +1,23 @@
 {
-  "typeMultipliers": null,
-  "topKeywords": [],
-  "optimalLengthRange": null,
+  "typeMultipliers": {
+    "general": 1,
+    "sv": 1,
+    "london": 1,
+    "wolf": 1,
+    "thread": 1
+  },
+  "topKeywords": [
+    "AI",
+    "LLM",
+    "founder",
+    "distribution",
+    "product",
+    "build"
+  ],
+  "optimalLengthRange": [
+    131,
+    197
+  ],
   "questionEndingBoost": 1,
-  "updatedAt": "2026-06-15T19:41:17.781Z"
+  "updatedAt": "2026-06-16T09:14:04.050Z"
 }

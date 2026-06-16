@@ -1,26 +1,42 @@
 {
-  "updatedAt": "2026-06-15T19:41:17.782Z",
+  "updatedAt": "2026-06-16T09:14:04.051Z",
   "errorAnalysis": {
-    "totalRecent": 0,
-    "byScript": {},
-    "criticalScripts": []
+    "totalRecent": 9,
+    "byScript": {
+      "engage.js": {
+        "count": 9,
+        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
+      }
+    },
+    "criticalScripts": [
+      {
+        "script": "engage.js",
+        "count": 9,
+        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
+      }
+    ]
   },
   "performanceAnalysis": {
-    "status": "insufficient_data",
+    "status": "active",
     "tweetsWithEngagement": 0,
     "bestType": null,
     "worstType": null,
     "recommendations": [
-      "Keep posting — brain needs more data to learn patterns"
+      "Optimal length: 131–197 chars (high performers: 164c, low: 123c)",
+      "High-performing keywords: \"AI\" (0pts), \"LLM\" (0pts), \"founder\" (0pts)"
     ]
   },
   "growthAnalysis": {
-    "status": "insufficient_data",
-    "currentFollowers": 5
+    "currentFollowers": 5,
+    "totalGain": 0,
+    "trackingDays": 0,
+    "dailyGrowthRate": 0,
+    "isStagnant": false,
+    "recentGain": 0
   },
   "keywordSuggestions": [],
   "overallRecommendations": [
-    "System healthy — no critical issues found"
+    "CRITICAL: Repeated errors in: engage.js (9x) — check errors.json"
   ],
   "dynamicConfigUpdated": true
 }

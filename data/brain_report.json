@@ -1,9 +1,35 @@
 {
-  "updatedAt": "2026-06-15T19:41:17.750Z",
-  "status": "insufficient_data",
-  "totalTweets": 19,
-  "tweetsWithId": 6,
-  "minRequired": 8,
+  "updatedAt": "2026-06-16T09:14:04.001Z",
+  "status": "active",
+  "totalTweets": 22,
+  "tweetsWithEngagement": 0,
+  "typePerformance": {
+    "general": {
+      "count": 8,
+      "withEngagement": 0,
+      "avgScore": null
+    },
+    "sv": {
+      "count": 1,
+      "withEngagement": 0,
+      "avgScore": null
+    },
+    "london": {
+      "count": 0,
+      "withEngagement": 0,
+      "avgScore": null
+    },
+    "wolf": {
+      "count": 0,
+      "withEngagement": 0,
+      "avgScore": null
+    },
+    "thread": {
+      "count": 0,
+      "withEngagement": 0,
+      "avgScore": null
+    }
+  },
   "typeMultipliers": {
     "general": 1,
     "sv": 1,
@@ -11,9 +37,61 @@
     "wolf": 1,
     "thread": 1
   },
-  "topKeywords": [],
-  "formatInsights": null,
+  "topKeywords": [
+    {
+      "keyword": "AI",
+      "avgScore": 0,
+      "count": 2
+    },
+    {
+      "keyword": "LLM",
+      "avgScore": 0,
+      "count": 2
+    },
+    {
+      "keyword": "founder",
+      "avgScore": 0,
+      "count": 2
+    },
+    {
+      "keyword": "distribution",
+      "avgScore": 0,
+      "count": 2
+    },
+    {
+      "keyword": "product",
+      "avgScore": 0,
+      "count": 4
+    },
+    {
+      "keyword": "build",
+      "avgScore": 0,
+      "count": 2
+    },
+    {
+      "keyword": "autonomous",
+      "avgScore": 0,
+      "count": 2
+    },
+    {
+      "keyword": "marketing",
+      "avgScore": 0,
+      "count": 2
+    }
+  ],
+  "formatInsights": {
+    "avgHighScoreLength": 164,
+    "avgLowScoreLength": 123,
+    "optimalLengthRange": [
+      131,
+      197
+    ],
+    "questionEndingInTop": 0,
+    "questionEndingOverall": 0,
+    "questionEndingBoost": 1
+  },
   "recommendations": [
-    "Keep posting — brain needs more data to learn patterns"
+    "Optimal length: 131–197 chars (high performers: 164c, low: 123c)",
+    "High-performing keywords: \"AI\" (0pts), \"LLM\" (0pts), \"founder\" (0pts)"
   ]
 }
