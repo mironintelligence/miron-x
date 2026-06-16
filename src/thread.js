@@ -58,8 +58,13 @@ async function main() {
       lastId = result?.id || null;
       saveTweet(tweets[i], lastId);
       console.log(`✅ Tweet ${i + 1}/${tweets.length} posted`);
-      if (i < tweets.length - 1) await sleep(4500);
+      if (i < tweets.length - 1) await sleep(18000);
     } catch (e) {
+      // Error 226 = Twitter flagged as automated — stop thread immediately
+      if (e.message?.includes('(226)')) {
+        console.log('⚠ Twitter flagged as automated (226) — stopping thread');
+        break;
+      }
       logError('thread.js', e, { phase: 'send_tweet', tweetIndex: i + 1, tweet: tweets[i].substring(0, 80) });
     }
   }

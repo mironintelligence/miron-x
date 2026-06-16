@@ -109,9 +109,14 @@ async function main() {
       } catch (e) {
         if (e.userUnavailable) {
           console.log(`  ↩ @${account}: account unavailable — skipping`);
+        } else if (e.message?.includes('Tweet not posted')) {
+          // Silent Twitter filter — mark as attempted, don't spam errors.json
+          console.log(`  ↩ @${account}: tweet silently blocked (rate-limit/filter)`);
         } else {
           logError('engage.js', e, { phase: 'reply', account });
         }
+        // Always sleep after any failure to avoid hammering when rate-limited
+        await sleep(5000);
       }
     }
     console.log(`  ✅ ${replied} replies`);
