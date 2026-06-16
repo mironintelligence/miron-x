@@ -4,88 +4,27 @@
   "totalTweets": 22,
   "tweetsWithEngagement": 0,
   "typePerformance": {
-    "general": {
-      "count": 8,
-      "withEngagement": 0,
-      "avgScore": null
-    },
-    "sv": {
-      "count": 1,
-      "withEngagement": 0,
-      "avgScore": null
-    },
-    "london": {
-      "count": 0,
-      "withEngagement": 0,
-      "avgScore": null
-    },
-    "wolf": {
-      "count": 0,
-      "withEngagement": 0,
-      "avgScore": null
-    },
-    "thread": {
-      "count": 0,
-      "withEngagement": 0,
-      "avgScore": null
-    }
+    "general": { "count": 8, "withEngagement": 0, "avgScore": null },
+    "sv": { "count": 1, "withEngagement": 0, "avgScore": null },
+    "london": { "count": 0, "withEngagement": 0, "avgScore": null },
+    "wolf": { "count": 0, "withEngagement": 0, "avgScore": null },
+    "thread": { "count": 0, "withEngagement": 0, "avgScore": null }
   },
-  "typeMultipliers": {
-    "general": 1,
-    "sv": 1,
-    "london": 1,
-    "wolf": 1,
-    "thread": 1
-  },
+  "typeMultipliers": { "general": 1, "sv": 1, "london": 1, "wolf": 1, "thread": 1 },
   "topKeywords": [
-    {
-      "keyword": "AI",
-      "avgScore": 0,
-      "count": 2
-    },
-    {
-      "keyword": "LLM",
-      "avgScore": 0,
-      "count": 2
-    },
-    {
-      "keyword": "founder",
-      "avgScore": 0,
-      "count": 2
-    },
-    {
-      "keyword": "distribution",
-      "avgScore": 0,
-      "count": 2
-    },
-    {
-      "keyword": "product",
-      "avgScore": 0,
-      "count": 4
-    },
-    {
-      "keyword": "build",
-      "avgScore": 0,
-      "count": 2
-    },
-    {
-      "keyword": "autonomous",
-      "avgScore": 0,
-      "count": 2
-    },
-    {
-      "keyword": "marketing",
-      "avgScore": 0,
-      "count": 2
-    }
+    { "keyword": "AI", "avgScore": 0, "count": 2 },
+    { "keyword": "LLM", "avgScore": 0, "count": 2 },
+    { "keyword": "founder", "avgScore": 0, "count": 2 },
+    { "keyword": "distribution", "avgScore": 0, "count": 2 },
+    { "keyword": "product", "avgScore": 0, "count": 4 },
+    { "keyword": "build", "avgScore": 0, "count": 2 },
+    { "keyword": "autonomous", "avgScore": 0, "count": 2 },
+    { "keyword": "marketing", "avgScore": 0, "count": 2 }
   ],
   "formatInsights": {
     "avgHighScoreLength": 164,
     "avgLowScoreLength": 123,
-    "optimalLengthRange": [
-      131,
-      197
-    ],
+    "optimalLengthRange": [131, 197],
     "questionEndingInTop": 0,
     "questionEndingOverall": 0,
     "questionEndingBoost": 1

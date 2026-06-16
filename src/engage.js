@@ -107,7 +107,11 @@ async function main() {
         console.log(`  ✅ @${account}: ${reply.substring(0, 60)}`);
         await sleep(10000);
       } catch (e) {
-        logError('engage.js', e, { phase: 'reply', account });
+        if (e.userUnavailable) {
+          console.log(`  ↩ @${account}: account unavailable — skipping`);
+        } else {
+          logError('engage.js', e, { phase: 'reply', account });
+        }
       }
     }
     console.log(`  ✅ ${replied} replies`);

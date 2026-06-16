@@ -51,21 +51,23 @@ Rule 11: No bullet-point structure. No "X% of Y" statistics unless you actually 
   // Famous accounts to repost/reply to
   REPOST_ACCOUNTS: [
     'elonmusk', 'naval', 'paulg', 'levelsio', 'dhh',
-    'garrytan', 'shl', 'marc_louvion', 'tibo_maker',
+    'garrytan', 'shl', 'tibo_maker', 'gregisenberg',
   ],
 
   TARGET_ACCOUNTS: [
     // Big names
     'sama', 'karpathy', 'naval', 'paulg', 'garrytan',
-    'elonmusk', 'andreessen', 'benedictevans',
+    'elonmusk', 'pmarca', 'benedictevans',
     // Indie / builder scene
-    'levelsio', 'marc_louvion', 'tibo_maker', 'shl', 'dvassallo',
+    'levelsio', 'tibo_maker', 'shl', 'dvassallo',
     'hnshah', 'amasad', 'mwseibel', 'Jason',
     'iamharaldur', 'stephsmithio', 'patio11', 'swyx',
     // SV small founders
-    'emmabostian', 'fortelabs', 'shreyas', 'dklinefelter',
+    'emmabostian', 'fortelabs', 'shreyas', 'thejustinwelsh',
+    // Growth / audience builders
+    'gregisenberg', 'sahilbloom', 'nikitabier',
     // London / UK founders
-    'paddycosgrave', 'jasonlk', 'ric_burton',
+    'paddycosgrave', 'jasonlk',
     'alexisohanian', 'jmj', 'robjama',
   ],
 

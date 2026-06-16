@@ -140,7 +140,14 @@ class XClient {
     if (this._userIdCache[clean]) return this._userIdCache[clean];
     const data = await this._gqlGet(QID.UserByScreenName, 'UserByScreenName',
       { screen_name: clean, withSafetyModeUserFields: true });
-    const userId = data?.data?.user?.result?.rest_id;
+    const result = data?.data?.user?.result;
+    const typename = result?.__typename;
+    if (typename === 'UserUnavailable' || !result) {
+      const err = new Error(`UserUnavailable: @${clean}`);
+      err.userUnavailable = true;
+      throw err;
+    }
+    const userId = result?.rest_id;
     if (!userId) throw new Error(`Could not resolve userId for @${clean}`);
     this._userIdCache[clean] = userId;
     return userId;
@@ -224,7 +231,11 @@ class XClient {
     const data = await this._gqlGet(QID.UserByScreenName, 'UserByScreenName',
       { screen_name: clean, withSafetyModeUserFields: true });
     const result = data?.data?.user?.result;
-    if (!result) throw new Error(`Profile not found: @${clean}`);
+    if (!result || result?.__typename === 'UserUnavailable') {
+      const err = new Error(`UserUnavailable: @${clean}`);
+      err.userUnavailable = true;
+      throw err;
+    }
     const legacy = result.legacy || {};
     this._userIdCache[clean.toLowerCase()] = result.rest_id;
     return {
