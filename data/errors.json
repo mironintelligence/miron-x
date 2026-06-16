@@ -61,5 +61,45 @@
     "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
     "phase": "reply",
     "account": "elonmusk"
+  },
+  {
+    "ts": "2026-06-16T18:06:32.758Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "send_tweet",
+    "tweetIndex": 1,
+    "tweet": "1/ Most tech fails in emerging markets because it's designed for PERFECT CONDITI"
+  },
+  {
+    "ts": "2026-06-16T18:06:32.865Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "send_tweet",
+    "tweetIndex": 2,
+    "tweet": "2/ 80% of internet users in Indonesia access the web via PREPAID PHONE PLANS wit"
+  },
+  {
+    "ts": "2026-06-16T18:06:32.976Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "send_tweet",
+    "tweetIndex": 3,
+    "tweet": "3/ Average ecommerce site in Brazil takes 7 SECONDS to load on a 3G connection"
+  },
+  {
+    "ts": "2026-06-16T18:06:33.082Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "send_tweet",
+    "tweetIndex": 4,
+    "tweet": "4/ REAL growth happens when you design for 2G networks and LIMITED DEVICE STORAG"
+  },
+  {
+    "ts": "2026-06-16T18:06:33.198Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "send_tweet",
+    "tweetIndex": 5,
+    "tweet": "5/ What's the worst network condition your product can still function in"
   }
 ]
