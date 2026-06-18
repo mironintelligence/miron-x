@@ -127,5 +127,40 @@
     "phase": "send_tweet",
     "tweetIndex": 4,
     "tweet": "4/ Understanding rhythm and melody can improve your ability to recognize PATTERN"
+  },
+  {
+    "ts": "2026-06-18T23:52:31.823Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "pmarca"
+  },
+  {
+    "ts": "2026-06-18T23:52:39.164Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "sahilbloom"
+  },
+  {
+    "ts": "2026-06-18T23:52:59.543Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "jasonlk"
+  },
+  {
+    "ts": "2026-06-18T23:53:07.194Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "shreyas"
+  },
+  {
+    "ts": "2026-06-18T23:53:15.164Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "dvassallo"
   }
 ]
