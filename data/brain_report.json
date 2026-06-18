@@ -1,26 +1,26 @@
 {
-  "updatedAt": "2026-06-17T08:52:36.550Z",
+  "updatedAt": "2026-06-18T08:29:08.108Z",
   "status": "active",
-  "totalTweets": 25,
+  "totalTweets": 32,
   "tweetsWithEngagement": 0,
   "typePerformance": {
     "general": {
-      "count": 8,
+      "count": 9,
       "withEngagement": 0,
       "avgScore": null
     },
     "sv": {
-      "count": 2,
+      "count": 5,
       "withEngagement": 0,
       "avgScore": null
     },
     "london": {
-      "count": 1,
+      "count": 3,
       "withEngagement": 0,
       "avgScore": null
     },
     "wolf": {
-      "count": 1,
+      "count": 2,
       "withEngagement": 0,
       "avgScore": null
     },
@@ -41,7 +41,7 @@
     {
       "keyword": "AI",
       "avgScore": 0,
-      "count": 2
+      "count": 4
     },
     {
       "keyword": "LLM",
@@ -51,57 +51,57 @@
     {
       "keyword": "founder",
       "avgScore": 0,
-      "count": 4
+      "count": 9
+    },
+    {
+      "keyword": "startup",
+      "avgScore": 0,
+      "count": 2
+    },
+    {
+      "keyword": "VC",
+      "avgScore": 0,
+      "count": 2
     },
     {
       "keyword": "distribution",
       "avgScore": 0,
-      "count": 2
+      "count": 3
     },
     {
       "keyword": "product",
       "avgScore": 0,
-      "count": 6
+      "count": 7
     },
     {
       "keyword": "build",
       "avgScore": 0,
-      "count": 2
+      "count": 6
     },
     {
       "keyword": "SV",
       "avgScore": 0,
-      "count": 2
+      "count": 4
     },
     {
-      "keyword": "autonomous",
+      "keyword": "London",
       "avgScore": 0,
-      "count": 2
-    },
-    {
-      "keyword": "marketing",
-      "avgScore": 0,
-      "count": 2
-    },
-    {
-      "keyword": "growth",
-      "avgScore": 0,
-      "count": 2
+      "count": 3
     }
   ],
   "formatInsights": {
-    "avgHighScoreLength": 164,
-    "avgLowScoreLength": 120,
+    "avgHighScoreLength": 145,
+    "avgLowScoreLength": 117,
     "optimalLengthRange": [
-      131,
-      197
+      116,
+      174
     ],
     "questionEndingInTop": 0,
     "questionEndingOverall": 0,
     "questionEndingBoost": 1
   },
   "recommendations": [
-    "Optimal length: 131–197 chars (high performers: 164c, low: 120c)",
+    "Optimal length: 116–174 chars (high performers: 145c, low: 117c)",
     "High-performing keywords: \"AI\" (0pts), \"LLM\" (0pts), \"founder\" (0pts)"
   ]
 }

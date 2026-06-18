@@ -10,14 +10,14 @@
     "AI",
     "LLM",
     "founder",
-    "distribution",
-    "product",
-    "build"
+    "startup",
+    "VC",
+    "distribution"
   ],
   "optimalLengthRange": [
-    131,
-    197
+    116,
+    174
   ],
   "questionEndingBoost": 1,
-  "updatedAt": "2026-06-17T08:52:36.598Z"
+  "updatedAt": "2026-06-18T08:29:08.161Z"
 }

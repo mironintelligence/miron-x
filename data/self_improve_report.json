@@ -1,18 +1,27 @@
 {
-  "updatedAt": "2026-06-17T08:52:36.598Z",
+  "updatedAt": "2026-06-18T08:29:08.162Z",
   "errorAnalysis": {
-    "totalRecent": 4,
+    "totalRecent": 15,
     "byScript": {
       "engage.js": {
+        "count": 11,
+        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
+      },
+      "repost.js": {
         "count": 4,
-        "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
+        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
       }
     },
     "criticalScripts": [
       {
         "script": "engage.js",
+        "count": 11,
+        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
+      },
+      {
+        "script": "repost.js",
         "count": 4,
-        "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
+        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
       }
     ]
   },
@@ -22,21 +31,21 @@
     "bestType": null,
     "worstType": null,
     "recommendations": [
-      "Optimal length: 131–197 chars (high performers: 164c, low: 120c)",
+      "Optimal length: 116–174 chars (high performers: 145c, low: 117c)",
       "High-performing keywords: \"AI\" (0pts), \"LLM\" (0pts), \"founder\" (0pts)"
     ]
   },
   "growthAnalysis": {
     "currentFollowers": 5,
     "totalGain": 0,
-    "trackingDays": 1,
+    "trackingDays": 2,
     "dailyGrowthRate": 0,
     "isStagnant": false,
     "recentGain": 0
   },
   "keywordSuggestions": [],
   "overallRecommendations": [
-    "CRITICAL: Repeated errors in: engage.js (4x) — check errors.json"
+    "CRITICAL: Repeated errors in: engage.js (11x), repost.js (4x) — check errors.json"
   ],
   "dynamicConfigUpdated": true
 }

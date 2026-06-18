@@ -72,7 +72,7 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-16T09:14:03.945Z",
+    "lastChecked": "2026-06-18T08:29:05.927Z",
     "type": "general"
   },
   {
@@ -83,7 +83,7 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-16T09:14:03.945Z",
+    "lastChecked": "2026-06-18T08:29:07.049Z",
     "type": "general"
   },
   {
@@ -139,7 +139,7 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-17T08:52:36.494Z"
+    "lastChecked": "2026-06-18T08:29:05.751Z"
   },
   {
     "text": "REAL distribution is about UNDERSTANDING your first 100 customers not just acquiring them",
@@ -150,7 +150,7 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-17T08:52:36.494Z"
+    "lastChecked": "2026-06-18T08:29:05.751Z"
   },
   {
     "text": "FOUNDERS need to stop obsessing over LLMs and focus on BUILDING REAL AUTONOMY into their systems because that's what will give them a LASTING EDGE",
@@ -161,7 +161,7 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-17T08:52:36.494Z"
+    "lastChecked": "2026-06-18T08:29:05.751Z"
   },
   {
     "text": "London founders focus on shipping product not pitching VCs. \nREAL growth happens when you understand your first 100 customers.",
@@ -172,7 +172,7 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-17T08:52:36.494Z"
+    "lastChecked": "2026-06-18T08:29:05.751Z"
   },
   {
     "text": "Men who sharpen under pressure vs men who fold under it. One forges steel the other breaks.",
@@ -183,7 +183,7 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-17T08:52:36.494Z"
+    "lastChecked": "2026-06-18T08:29:05.751Z"
   },
   {
     "text": "Most SV founders waste 6 months on product-market fit because they don't understand their first 10 paying customers.",
@@ -194,48 +194,83 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-17T08:52:36.494Z"
+    "lastChecked": "2026-06-18T08:29:05.751Z"
   },
   {
     "text": "London founders should stop chasing US VCs and focus on BUILDING REAL PRODUCTS that solve local problems first then scale globally",
     "id": "2067241409682243620",
     "ts": "2026-06-17T13:42:14.373Z",
-    "type": "london"
+    "type": "london",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-18T08:29:05.751Z"
   },
   {
     "text": "London founders waste time on unnecessary regulatory hurdles because they don't know how to work WITH the system not against it",
     "id": "2067252040502501568",
     "ts": "2026-06-17T14:24:28.947Z",
-    "type": "london"
+    "type": "london",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-18T08:29:05.751Z"
   },
   {
     "text": "Distribution is everything SV founders underestimate until month 8 then they're dead.",
     "id": "2067313778719429054",
     "ts": "2026-06-17T18:29:48.495Z",
-    "type": "sv"
+    "type": "sv",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-18T08:29:05.751Z"
   },
   {
     "text": "Men who sharpen under pressure vs men who fold under it define the difference between strength and weakness.",
     "id": "2067328268098015571",
     "ts": "2026-06-17T19:27:23.045Z",
-    "type": "wolf"
+    "type": "wolf",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-18T08:29:05.751Z"
   },
   {
     "text": "Building in SF means navigating CITY REGULATIONS that kill 80% of bootstrapped startups before they even launch.",
     "id": "2067351485990699501",
     "ts": "2026-06-17T20:59:38.585Z",
-    "type": "sv"
+    "type": "sv",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-18T08:29:05.751Z"
   },
   {
     "text": "SV founders overpay for talent because they think BRAND NAME devs are better than HUNGRY unknowns who actually BUILD something.",
     "id": "2067487167450886564",
     "ts": "2026-06-18T05:58:47.567Z",
-    "type": "sv"
+    "type": "sv",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-18T08:29:05.751Z"
   },
   {
     "text": "Founders who BUILD WITH AI need to STOP relying on DEFAULT SETTINGS and actually learn how to configure their AI CODING TOOLS for real workflows",
     "id": "2067502436181271030",
     "ts": "2026-06-18T06:59:27.940Z",
-    "type": "general"
+    "type": "general",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-18T08:29:05.751Z"
   }
 ]
