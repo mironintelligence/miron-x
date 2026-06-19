@@ -162,5 +162,37 @@
     "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
     "phase": "reply",
     "account": "dvassallo"
+  },
+  {
+    "ts": "2026-06-19T16:09:57.792Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 1,
+    "tweet": "1/ Most DRONE TECH is held back by POWER SOURCE limitations"
+  },
+  {
+    "ts": "2026-06-19T16:09:57.956Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 2,
+    "tweet": "2/ SWAPPING BATTERIES is not a scalable solution for autonomous systems"
+  },
+  {
+    "ts": "2026-06-19T16:10:16.392Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 4,
+    "tweet": "4/ COMPANIES like mine are already testing these new POWER SOURCES in real world"
+  },
+  {
+    "ts": "2026-06-19T16:10:16.540Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 5,
+    "tweet": "5/ What would you build with a drone that can stay aloft for 5 hours"
   }
 ]
