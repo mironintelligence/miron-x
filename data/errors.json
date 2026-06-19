@@ -194,5 +194,33 @@
     "phase": "send_tweet",
     "tweetIndex": 5,
     "tweet": "5/ What would you build with a drone that can stay aloft for 5 hours"
+  },
+  {
+    "ts": "2026-06-19T23:07:02.947Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "pmarca"
+  },
+  {
+    "ts": "2026-06-19T23:07:25.488Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "gregisenberg"
+  },
+  {
+    "ts": "2026-06-19T23:07:32.965Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "jasonlk"
+  },
+  {
+    "ts": "2026-06-19T23:07:40.377Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "fortelabs"
   }
 ]
