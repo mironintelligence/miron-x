@@ -246,5 +246,26 @@
     "phase": "send_tweet",
     "tweetIndex": 3,
     "tweet": "3/ Companies using AI AGENTS see a 25% increase in operational efficiency"
+  },
+  {
+    "ts": "2026-06-20T23:17:58.645Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "hnshah"
+  },
+  {
+    "ts": "2026-06-20T23:18:08.573Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "elonmusk"
+  },
+  {
+    "ts": "2026-06-20T23:18:18.133Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "shreyas"
   }
 ]
