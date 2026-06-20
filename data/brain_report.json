@@ -1,31 +1,31 @@
 {
-  "updatedAt": "2026-06-19T08:56:51.467Z",
+  "updatedAt": "2026-06-20T07:40:30.996Z",
   "status": "active",
-  "totalTweets": 37,
+  "totalTweets": 43,
   "tweetsWithEngagement": 0,
   "typePerformance": {
     "general": {
-      "count": 11,
+      "count": 13,
       "withEngagement": 0,
       "avgScore": null
     },
     "sv": {
-      "count": 5,
+      "count": 6,
       "withEngagement": 0,
       "avgScore": null
     },
     "london": {
-      "count": 4,
+      "count": 5,
       "withEngagement": 0,
       "avgScore": null
     },
     "wolf": {
-      "count": 2,
+      "count": 3,
       "withEngagement": 0,
       "avgScore": null
     },
     "thread": {
-      "count": 2,
+      "count": 3,
       "withEngagement": 0,
       "avgScore": null
     }
@@ -41,7 +41,7 @@
     {
       "keyword": "AI",
       "avgScore": 0,
-      "count": 6
+      "count": 8
     },
     {
       "keyword": "LLM",
@@ -51,7 +51,7 @@
     {
       "keyword": "founder",
       "avgScore": 0,
-      "count": 13
+      "count": 15
     },
     {
       "keyword": "startup",
@@ -61,7 +61,7 @@
     {
       "keyword": "VC",
       "avgScore": 0,
-      "count": 2
+      "count": 4
     },
     {
       "keyword": "distribution",
@@ -71,37 +71,37 @@
     {
       "keyword": "product",
       "avgScore": 0,
-      "count": 9
+      "count": 10
     },
     {
       "keyword": "build",
       "avgScore": 0,
-      "count": 6
+      "count": 10
     },
     {
       "keyword": "SV",
       "avgScore": 0,
-      "count": 4
+      "count": 7
     },
     {
       "keyword": "London",
       "avgScore": 0,
-      "count": 4
+      "count": 5
     }
   ],
   "formatInsights": {
-    "avgHighScoreLength": 147,
-    "avgLowScoreLength": 115,
+    "avgHighScoreLength": 140,
+    "avgLowScoreLength": 94,
     "optimalLengthRange": [
-      118,
-      176
+      112,
+      168
     ],
     "questionEndingInTop": 0,
     "questionEndingOverall": 0,
     "questionEndingBoost": 1
   },
   "recommendations": [
-    "Optimal length: 118–176 chars (high performers: 147c, low: 115c)",
+    "Optimal length: 112–168 chars (high performers: 140c, low: 94c)",
     "High-performing keywords: \"AI\" (0pts), \"LLM\" (0pts), \"founder\" (0pts)"
   ]
 }
