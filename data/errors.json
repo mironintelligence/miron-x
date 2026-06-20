@@ -222,5 +222,29 @@
     "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
     "phase": "reply",
     "account": "fortelabs"
+  },
+  {
+    "ts": "2026-06-20T15:05:10.373Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "send_tweet",
+    "tweetIndex": 1,
+    "tweet": "1/ AUTONOMOUS SYSTEMS will replace 40% of traditional IT jobs within 5 years"
+  },
+  {
+    "ts": "2026-06-20T15:05:10.481Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "send_tweet",
+    "tweetIndex": 2,
+    "tweet": "2/ 85% of drone tech is being developed for INDUSTRIAL USE CASES not consumer"
+  },
+  {
+    "ts": "2026-06-20T15:05:10.585Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "send_tweet",
+    "tweetIndex": 3,
+    "tweet": "3/ Companies using AI AGENTS see a 25% increase in operational efficiency"
   }
 ]
