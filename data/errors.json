@@ -267,5 +267,26 @@
     "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
     "phase": "reply",
     "account": "shreyas"
+  },
+  {
+    "ts": "2026-06-21T21:14:31.432Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "quote_tweet",
+    "account": "paulg"
+  },
+  {
+    "ts": "2026-06-21T21:14:38.736Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "quote_tweet",
+    "account": "elonmusk"
+  },
+  {
+    "ts": "2026-06-21T21:14:45.914Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "quote_tweet",
+    "account": "levelsio"
   }
 ]
