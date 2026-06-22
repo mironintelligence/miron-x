@@ -302,5 +302,37 @@
     "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
     "phase": "reply",
     "account": "patio11"
+  },
+  {
+    "ts": "2026-06-22T17:42:00.936Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 1,
+    "tweet": "1/ MOST AI SYSTEMS are designed to FAIL in the real world because they are train"
+  },
+  {
+    "ts": "2026-06-22T17:42:01.135Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 2,
+    "tweet": "2/ 80% of drone crashes are caused by SENSOR MALFUNCTIONS not software issues"
+  },
+  {
+    "ts": "2026-06-22T17:42:01.324Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 3,
+    "tweet": "3/ AUTONOMOUS SYSTEMS need to be designed with FAILURE MODES in mind to be EFFEC"
+  },
+  {
+    "ts": "2026-06-22T17:42:01.490Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 4,
+    "tweet": "4/ REAL-WORLD AI DEPLOYMENTS require 5 TIMES more computational power than lab t"
   }
 ]
