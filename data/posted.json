@@ -351,7 +351,7 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-22T09:36:47.615Z"
+    "lastChecked": "2026-06-23T07:36:26.894Z"
   },
   {
     "text": "Work gets done in the dark no crowd, just the weight.",
@@ -362,7 +362,7 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-22T09:36:47.615Z"
+    "lastChecked": "2026-06-23T07:36:26.894Z"
   },
   {
     "text": "Most SV founders overoptimize for VC approval instead of building something that survives MONTH 9 without funding",
@@ -373,7 +373,7 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-22T09:36:47.615Z"
+    "lastChecked": "2026-06-23T07:36:26.894Z"
   },
   {
     "text": "Builders outside SV have one advantage: NO ECHO CHAMBER to distort product decisions what are you doing with this edge",
@@ -384,7 +384,7 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-22T09:36:47.615Z"
+    "lastChecked": "2026-06-23T07:36:26.894Z"
   },
   {
     "text": "4/ MARKETING STRATEGIES that actually work are the ones that use REAL DATA not hype",
@@ -409,7 +409,7 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-22T09:36:47.615Z"
+    "lastChecked": "2026-06-23T07:36:26.894Z"
   },
   {
     "text": "BUILDING a profitable startup takes 3 years of grinding not 3 months of pitching VCs",
@@ -420,7 +420,7 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-22T09:36:47.615Z"
+    "lastChecked": "2026-06-23T07:36:26.894Z"
   },
   {
     "text": "Distribution is key but most founders mess it up by focusing on the wrong 100 customers BUILD for the 10 who will actually pay",
@@ -431,7 +431,7 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-22T09:36:47.615Z"
+    "lastChecked": "2026-06-23T07:36:26.894Z"
   },
   {
     "text": "Building outside SV forces founders to focus on PROFITABILITY not VC approval.",
@@ -442,7 +442,7 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-22T09:36:47.615Z"
+    "lastChecked": "2026-06-23T07:36:26.894Z"
   },
   {
     "text": "FOCUS ON OPERATING LEVERAGE not fundraising milestones BUILDING a startup is about surviving 5 years of uncertainty",
@@ -453,48 +453,83 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-22T09:36:47.615Z"
+    "lastChecked": "2026-06-23T07:36:26.894Z"
   },
   {
     "text": "London founders waste time on perfecting pitch decks when they should be PERFECTING THEIR minimum viable product",
     "id": "2069085041091891478",
     "ts": "2026-06-22T15:48:10.325Z",
-    "type": "london"
+    "type": "london",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-23T07:36:26.894Z"
   },
   {
     "text": "5/ Can anyone name a single AI system that has been successfully deployed in a HIGH-RISK environment without failing",
     "id": "2069113693963469303",
     "ts": "2026-06-22T17:42:01.749Z",
-    "type": "thread"
+    "type": "thread",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-23T07:36:26.894Z"
   },
   {
     "text": "Pain is a doorway. The wolf walks through it.",
     "id": "2069150898291708282",
     "ts": "2026-06-22T20:09:51.911Z",
-    "type": "wolf"
+    "type": "wolf",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-23T07:36:26.894Z"
   },
   {
     "text": "BUILDING with AI means accepting 20% of code is WRONG but shipping anyway because DELAY is a bigger risk",
     "id": "2069161741603463343",
     "ts": "2026-06-22T20:52:57.160Z",
-    "type": "general"
+    "type": "general",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-23T07:36:26.894Z"
   },
   {
     "text": "Most SV founders die because they optimize for VC approval not PROFITABILITY focus on revenue not fundraising milestones",
     "id": "2069170420922683543",
     "ts": "2026-06-22T21:27:26.478Z",
-    "type": "sv"
+    "type": "sv",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-23T07:36:26.894Z"
   },
   {
     "text": "Building AI products requires understanding EDGE CASES not just average use.",
     "id": "2069266987679699333",
     "ts": "2026-06-23T03:51:09.791Z",
-    "type": "general"
+    "type": "general",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-23T07:36:26.894Z"
   },
   {
     "text": "Autonomous systems will displace 30% of human labor in logistics within 5 years what are you building to own the remainder",
     "id": "2069303078877004183",
     "ts": "2026-06-23T06:14:34.600Z",
-    "type": "general"
+    "type": "general",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-23T07:36:26.894Z"
   }
 ]
