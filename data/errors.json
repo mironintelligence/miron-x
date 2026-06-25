@@ -611,5 +611,54 @@
     "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
     "phase": "reply",
     "account": "sahilbloom"
+  },
+  {
+    "ts": "2026-06-25T21:42:54.147Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "quote_tweet",
+    "account": "paulg"
+  },
+  {
+    "ts": "2026-06-25T21:42:56.711Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "quote_tweet",
+    "account": "shl"
+  },
+  {
+    "ts": "2026-06-25T21:42:59.393Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "quote_tweet",
+    "account": "naval"
+  },
+  {
+    "ts": "2026-06-25T21:43:04.592Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "quote_tweet",
+    "account": "gregisenberg"
+  },
+  {
+    "ts": "2026-06-25T21:43:07.432Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "quote_tweet",
+    "account": "elonmusk"
+  },
+  {
+    "ts": "2026-06-25T21:43:10.896Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "quote_tweet",
+    "account": "levelsio"
+  },
+  {
+    "ts": "2026-06-25T21:43:13.782Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "quote_tweet",
+    "account": "garrytan"
   }
 ]
