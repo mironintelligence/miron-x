@@ -537,5 +537,37 @@
     "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
     "phase": "reply",
     "account": "amasad"
+  },
+  {
+    "ts": "2026-06-25T15:43:10.490Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 1,
+    "tweet": "1/ Most TECH DEBT comes from over-engineering for FUTURE PROOFING"
+  },
+  {
+    "ts": "2026-06-25T15:43:10.624Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 2,
+    "tweet": "2/ 80% of features are used by LESS THAN 10% of users"
+  },
+  {
+    "ts": "2026-06-25T15:43:10.786Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 3,
+    "tweet": "3/ REAL WORLD DATA shows that 50% of users abandon products within 3 months"
+  },
+  {
+    "ts": "2026-06-25T15:43:29.198Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 5,
+    "tweet": "5/ What's the ONE THING you're building that WILL STILL MATTER in 5 years"
   }
 ]
