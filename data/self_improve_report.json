@@ -1,36 +1,36 @@
 {
-  "updatedAt": "2026-06-25T07:32:22.042Z",
+  "updatedAt": "2026-06-26T07:41:25.316Z",
   "errorAnalysis": {
-    "totalRecent": 60,
+    "totalRecent": 73,
     "byScript": {
       "thread.js": {
-        "count": 14,
+        "count": 15,
         "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
       },
       "engage.js": {
-        "count": 31,
+        "count": 36,
         "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
       },
       "repost.js": {
-        "count": 15,
-        "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
+        "count": 22,
+        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
       }
     },
     "criticalScripts": [
       {
         "script": "thread.js",
-        "count": 14,
+        "count": 15,
         "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
       },
       {
         "script": "engage.js",
-        "count": 31,
+        "count": 36,
         "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
       },
       {
         "script": "repost.js",
-        "count": 15,
-        "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
+        "count": 22,
+        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
       }
     ]
   },
@@ -40,22 +40,22 @@
     "bestType": null,
     "worstType": null,
     "recommendations": [
-      "Optimal length: 102–154 chars (high performers: 128c, low: 87c)",
+      "Optimal length: 102–152 chars (high performers: 127c, low: 91c)",
       "High-performing keywords: \"AI\" (0pts), \"LLM\" (0pts), \"founder\" (0pts)"
     ]
   },
   "growthAnalysis": {
     "currentFollowers": 5,
     "totalGain": 0,
-    "trackingDays": 9,
+    "trackingDays": 10,
     "dailyGrowthRate": 0,
     "isStagnant": true,
     "recentGain": 0
   },
   "keywordSuggestions": [],
   "overallRecommendations": [
-    "CRITICAL: Repeated errors in: thread.js (14x), engage.js (31x), repost.js (15x) — check errors.json",
-    "GROWTH STAGNANT: No new followers in 9 tracked days — increase engage.js frequency or adjust content mix"
+    "CRITICAL: Repeated errors in: thread.js (15x), engage.js (36x), repost.js (22x) — check errors.json",
+    "GROWTH STAGNANT: No new followers in 10 tracked days — increase engage.js frequency or adjust content mix"
   ],
   "dynamicConfigUpdated": true
 }
