@@ -698,5 +698,11 @@
     "replies": 0,
     "score": 0,
     "lastChecked": "2026-06-26T07:40:32.194Z"
+  },
+  {
+    "text": "You're building for 1000 users not 1 million your product needs to work for the FIRST user.",
+    "id": "2070566659970986170",
+    "ts": "2026-06-26T17:55:35.799Z",
+    "type": "sv"
   }
 ]
