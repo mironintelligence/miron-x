@@ -728,5 +728,40 @@
     "phase": "send_tweet",
     "tweetIndex": 5,
     "tweet": "5/ What's the one thing you can change in your online community today to make it"
+  },
+  {
+    "ts": "2026-06-26T18:19:32.080Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "sahilbloom"
+  },
+  {
+    "ts": "2026-06-26T18:19:41.868Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "naval"
+  },
+  {
+    "ts": "2026-06-26T18:19:49.589Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "alexisohanian"
+  },
+  {
+    "ts": "2026-06-26T18:19:57.120Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "mwseibel"
+  },
+  {
+    "ts": "2026-06-26T18:20:04.866Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "hnshah"
   }
 ]
