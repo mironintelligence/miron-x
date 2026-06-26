@@ -688,5 +688,45 @@
     "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
     "phase": "reply",
     "account": "garrytan"
+  },
+  {
+    "ts": "2026-06-26T15:26:12.939Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "send_tweet",
+    "tweetIndex": 1,
+    "tweet": "1/ Most ONLINE COMMUNITIES are actually designed to KEEP YOU coming back not to "
+  },
+  {
+    "ts": "2026-06-26T15:26:13.063Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "send_tweet",
+    "tweetIndex": 2,
+    "tweet": "2/ ACTIVE USER COUNT is a useless metric if you don't know what actions those us"
+  },
+  {
+    "ts": "2026-06-26T15:26:13.185Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "send_tweet",
+    "tweetIndex": 3,
+    "tweet": "3/ COMMUNITY BUILDERS focus too much on GROWTH RATE and not enough on MEMBER RET"
+  },
+  {
+    "ts": "2026-06-26T15:26:13.302Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "send_tweet",
+    "tweetIndex": 4,
+    "tweet": "4/ REAL COMMUNITY VALUE is created when members HELP EACH OTHER not just the com"
+  },
+  {
+    "ts": "2026-06-26T15:26:13.424Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "send_tweet",
+    "tweetIndex": 5,
+    "tweet": "5/ What's the one thing you can change in your online community today to make it"
   }
 ]
