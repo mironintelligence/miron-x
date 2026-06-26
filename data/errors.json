@@ -763,5 +763,12 @@
     "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
     "phase": "reply",
     "account": "hnshah"
+  },
+  {
+    "ts": "2026-06-26T21:19:25.723Z",
+    "script": "repost.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "quote_tweet",
+    "account": "elonmusk"
   }
 ]
