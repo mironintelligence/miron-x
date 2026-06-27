@@ -790,5 +790,11 @@
     "id": "2070932165777297570",
     "ts": "2026-06-27T18:07:59.168Z",
     "type": "wolf"
+  },
+  {
+    "text": "Most AI systems are designed to fail quietly so users can't tell.",
+    "id": "2070951853832233123",
+    "ts": "2026-06-27T19:26:13.153Z",
+    "type": "general"
   }
 ]
