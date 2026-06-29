@@ -819,5 +819,26 @@
     "error": "CreateTweet error: Authorization: The original Tweet author restricted who can reply to this Tweet. (433)",
     "phase": "reply",
     "account": "levelsio"
+  },
+  {
+    "ts": "2026-06-29T16:40:08.308Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "Jason"
+  },
+  {
+    "ts": "2026-06-29T16:40:31.218Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "elonmusk"
+  },
+  {
+    "ts": "2026-06-29T16:40:38.782Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "gregisenberg"
   }
 ]
