@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-28T07:42:56.305Z",
+  "updatedAt": "2026-06-29T08:47:57.246Z",
   "status": "active",
-  "totalTweets": 87,
+  "totalTweets": 89,
   "tweetsWithEngagement": 0,
   "typePerformance": {
     "general": {
@@ -10,7 +10,7 @@
       "avgScore": null
     },
     "sv": {
-      "count": 14,
+      "count": 16,
       "withEngagement": 0,
       "avgScore": null
     },
@@ -41,10 +41,15 @@
     {
       "keyword": "AI",
       "avgScore": 0,
-      "count": 22
+      "count": 23
     },
     {
       "keyword": "LLM",
+      "avgScore": 0,
+      "count": 3
+    },
+    {
+      "keyword": "production",
       "avgScore": 0,
       "count": 2
     },
@@ -56,7 +61,7 @@
     {
       "keyword": "startup",
       "avgScore": 0,
-      "count": 13
+      "count": 14
     },
     {
       "keyword": "VC",
@@ -66,32 +71,27 @@
     {
       "keyword": "distribution",
       "avgScore": 0,
-      "count": 6
+      "count": 7
     },
     {
       "keyword": "product",
       "avgScore": 0,
-      "count": 15
+      "count": 17
     },
     {
       "keyword": "build",
       "avgScore": 0,
-      "count": 22
+      "count": 23
     },
     {
       "keyword": "SV",
       "avgScore": 0,
       "count": 12
-    },
-    {
-      "keyword": "London",
-      "avgScore": 0,
-      "count": 7
     }
   ],
   "formatInsights": {
     "avgHighScoreLength": 127,
-    "avgLowScoreLength": 98,
+    "avgLowScoreLength": 101,
     "optimalLengthRange": [
       102,
       152
@@ -101,7 +101,7 @@
     "questionEndingBoost": 1
   },
   "recommendations": [
-    "Optimal length: 102–152 chars (high performers: 127c, low: 98c)",
-    "High-performing keywords: \"AI\" (0pts), \"LLM\" (0pts), \"founder\" (0pts)"
+    "Optimal length: 102–152 chars (high performers: 127c, low: 101c)",
+    "High-performing keywords: \"AI\" (0pts), \"LLM\" (0pts), \"production\" (0pts)"
   ]
 }
