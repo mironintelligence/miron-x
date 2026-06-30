@@ -798,7 +798,7 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-29T08:46:48.672Z"
+    "lastChecked": "2026-06-30T07:40:22.861Z"
   },
   {
     "text": "work gets done in the dark no applause needed",
@@ -809,7 +809,7 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-29T08:46:48.672Z"
+    "lastChecked": "2026-06-30T07:40:22.861Z"
   },
   {
     "text": "Most AI systems are designed to fail quietly so users can't tell.",
@@ -820,7 +820,7 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-29T08:46:48.672Z"
+    "lastChecked": "2026-06-30T07:40:22.861Z"
   },
   {
     "text": "AI benchmark theater obscures the fact that 90% of LLMs in production are used for BASIC TEXT CLASSIFICATION not revolutionary use cases",
@@ -831,7 +831,7 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-29T08:46:48.672Z"
+    "lastChecked": "2026-06-30T07:40:22.861Z"
   },
   {
     "text": "Distribution is HARDER than building a better product every time SHIPPING is what separates the 2% of startups that survive.",
@@ -842,48 +842,83 @@
     "retweets": 0,
     "replies": 0,
     "score": 0,
-    "lastChecked": "2026-06-29T08:46:48.672Z"
+    "lastChecked": "2026-06-30T07:40:22.861Z"
   },
   {
     "text": "UK founders fixate on US VC approval when they should focus on serving REAL CUSTOMERS in their own backyard",
     "id": "2071595734357651650",
     "ts": "2026-06-29T14:04:46.254Z",
-    "type": "london"
+    "type": "london",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-30T07:40:22.861Z"
   },
   {
     "text": "London founders should STOP chasing US VCs and focus on building for LOCAL MARKETS first",
     "id": "2071605331524804783",
     "ts": "2026-06-29T14:42:54.407Z",
-    "type": "london"
+    "type": "london",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-30T07:40:22.861Z"
   },
   {
     "text": "Most SV founders think AI will solve their CUSTOMER SUPPORT problems but 90% of AI usage is just automated email responses",
     "id": "2071658111606174161",
     "ts": "2026-06-29T18:12:38.168Z",
-    "type": "sv"
+    "type": "sv",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-30T07:40:22.861Z"
   },
   {
     "text": "BUILDING with AI means understanding 80% of value comes from 20% of FEATURES that actually work.",
     "id": "2071685977441976657",
     "ts": "2026-06-29T20:03:21.889Z",
-    "type": "general"
+    "type": "general",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-30T07:40:22.861Z"
   },
   {
     "text": "Your AI agent is only as good as the DATA it's trained on stop relying on PUBLIC datasets",
     "id": "2071804796563005927",
     "ts": "2026-06-30T03:55:30.605Z",
-    "type": "general"
+    "type": "general",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-30T07:40:22.861Z"
   },
   {
     "text": "SV founders waste time reading playbooks when they should be testing MARKET FIT with tiny budgets and real customers.",
     "id": "2071823066338922522",
     "ts": "2026-06-30T05:08:06.437Z",
-    "type": "sv"
+    "type": "sv",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-30T07:40:22.861Z"
   },
   {
     "text": "Most founders die because they can't say NO to bad ideas SHIPPING what matters means killing what doesn't",
     "id": "2071840925198831910",
     "ts": "2026-06-30T06:19:04.332Z",
-    "type": "general"
+    "type": "general",
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "score": 0,
+    "lastChecked": "2026-06-30T07:40:22.861Z"
   }
 ]
