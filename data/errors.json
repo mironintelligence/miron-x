@@ -861,5 +861,45 @@
     "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
     "phase": "reply",
     "account": "paddycosgrave"
+  },
+  {
+    "ts": "2026-06-30T15:33:34.819Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 1,
+    "tweet": "1/ DRONE REGULATIONS are killing the industry"
+  },
+  {
+    "ts": "2026-06-30T15:33:35.041Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 2,
+    "tweet": "2/ 80% of drone startups fail due to certification costs"
+  },
+  {
+    "ts": "2026-06-30T15:33:35.214Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 3,
+    "tweet": "3/ Countries with clear drone laws see 300% more investment"
+  },
+  {
+    "ts": "2026-06-30T15:33:35.394Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 4,
+    "tweet": "4/ Most drone companies spend 6 months just getting airborne"
+  },
+  {
+    "ts": "2026-06-30T15:33:35.568Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 5,
+    "tweet": "5/ What's the real cost of overregulation for drone tech"
   }
 ]
