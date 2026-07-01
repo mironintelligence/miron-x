@@ -915,5 +915,33 @@
     "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
     "phase": "reply",
     "account": "tibo_maker"
+  },
+  {
+    "ts": "2026-07-01T18:52:40.610Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "alexisohanian"
+  },
+  {
+    "ts": "2026-07-01T18:52:48.328Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "jasonlk"
+  },
+  {
+    "ts": "2026-07-01T18:53:09.206Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "Jason"
+  },
+  {
+    "ts": "2026-07-01T18:53:17.102Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "garrytan"
   }
 ]
