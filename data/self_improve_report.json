@@ -1,36 +1,36 @@
 {
-  "updatedAt": "2026-06-30T07:40:22.970Z",
+  "updatedAt": "2026-07-01T08:01:55.124Z",
   "errorAnalysis": {
-    "totalRecent": 63,
+    "totalRecent": 56,
     "byScript": {
       "engage.js": {
-        "count": 37,
+        "count": 32,
         "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
       },
       "repost.js": {
-        "count": 17,
+        "count": 10,
         "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
       },
       "thread.js": {
-        "count": 9,
-        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
+        "count": 14,
+        "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
       }
     },
     "criticalScripts": [
       {
         "script": "engage.js",
-        "count": 37,
+        "count": 32,
         "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
       },
       {
         "script": "repost.js",
-        "count": 17,
+        "count": 10,
         "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
       },
       {
         "script": "thread.js",
-        "count": 9,
-        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
+        "count": 14,
+        "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
       }
     ]
   },
@@ -40,22 +40,22 @@
     "bestType": null,
     "worstType": null,
     "recommendations": [
-      "Optimal length: 99–149 chars (high performers: 124c, low: 106c)",
+      "Optimal length: 98–146 chars (high performers: 122c, low: 100c)",
       "High-performing keywords: \"AI\" (0pts), \"LLM\" (0pts), \"production\" (0pts)"
     ]
   },
   "growthAnalysis": {
     "currentFollowers": 5,
     "totalGain": 0,
-    "trackingDays": 14,
+    "trackingDays": 15,
     "dailyGrowthRate": 0,
     "isStagnant": true,
     "recentGain": 0
   },
   "keywordSuggestions": [],
   "overallRecommendations": [
-    "CRITICAL: Repeated errors in: engage.js (37x), repost.js (17x), thread.js (9x) — check errors.json",
-    "GROWTH STAGNANT: No new followers in 14 tracked days — increase engage.js frequency or adjust content mix"
+    "CRITICAL: Repeated errors in: engage.js (32x), repost.js (10x), thread.js (14x) — check errors.json",
+    "GROWTH STAGNANT: No new followers in 15 tracked days — increase engage.js frequency or adjust content mix"
   ],
   "dynamicConfigUpdated": true
 }
