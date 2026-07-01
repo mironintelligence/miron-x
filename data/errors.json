@@ -908,5 +908,12 @@
     "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
     "phase": "reply",
     "account": "nikitabier"
+  },
+  {
+    "ts": "2026-07-01T15:47:21.534Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "tibo_maker"
   }
 ]
