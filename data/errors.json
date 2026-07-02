@@ -971,5 +971,26 @@
     "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
     "phase": "quote_tweet",
     "account": "gregisenberg"
+  },
+  {
+    "ts": "2026-07-02T18:21:45.526Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "swyx"
+  },
+  {
+    "ts": "2026-07-02T18:21:53.290Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "pmarca"
+  },
+  {
+    "ts": "2026-07-02T18:22:01.378Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "dvassallo"
   }
 ]
