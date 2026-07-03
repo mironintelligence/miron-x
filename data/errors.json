@@ -1081,5 +1081,19 @@
     "phase": "send_tweet",
     "tweetIndex": 5,
     "tweet": "5/ How will you adapt your business when drones start disrupting your supply cha"
+  },
+  {
+    "ts": "2026-07-03T18:06:08.113Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "pmarca"
+  },
+  {
+    "ts": "2026-07-03T18:06:17.628Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "tibo_maker"
   }
 ]
