@@ -1095,5 +1095,47 @@
     "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
     "phase": "reply",
     "account": "tibo_maker"
+  },
+  {
+    "ts": "2026-07-03T21:06:57.166Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "quote_tweet",
+    "account": "elonmusk"
+  },
+  {
+    "ts": "2026-07-03T21:07:07.573Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "quote_tweet",
+    "account": "gregisenberg"
+  },
+  {
+    "ts": "2026-07-03T21:07:10.832Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "quote_tweet",
+    "account": "levelsio"
+  },
+  {
+    "ts": "2026-07-03T21:07:13.500Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "quote_tweet",
+    "account": "paulg"
+  },
+  {
+    "ts": "2026-07-03T21:07:16.176Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "quote_tweet",
+    "account": "shl"
+  },
+  {
+    "ts": "2026-07-03T21:07:19.040Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "quote_tweet",
+    "account": "garrytan"
   }
 ]
