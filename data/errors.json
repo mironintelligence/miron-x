@@ -1027,5 +1027,19 @@
     "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
     "phase": "reply",
     "account": "tibo_maker"
+  },
+  {
+    "ts": "2026-07-03T06:53:50.600Z",
+    "script": "analytics.js",
+    "error": "REST statuses/show.json HTTP 403: <!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-js ie8 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"en-US\"> <!",
+    "phase": "fetch_old_tweet",
+    "tweetId": "2071595734357651650"
+  },
+  {
+    "ts": "2026-07-03T06:53:50.681Z",
+    "script": "analytics.js",
+    "error": "REST statuses/show.json HTTP 403: <!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-js ie8 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"en-US\"> <!",
+    "phase": "fetch_old_tweet",
+    "tweetId": "2071605331524804783"
   }
 ]
