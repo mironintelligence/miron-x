@@ -1041,5 +1041,45 @@
     "error": "REST statuses/show.json HTTP 403: <!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-js ie8 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"en-US\"> <!",
     "phase": "fetch_old_tweet",
     "tweetId": "2071605331524804783"
+  },
+  {
+    "ts": "2026-07-03T15:14:10.200Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 1,
+    "tweet": "1/ Autonomous drones will replace 30% of human labor in logistics within 5 years"
+  },
+  {
+    "ts": "2026-07-03T15:14:10.373Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 2,
+    "tweet": "2/ Turkish postal service already uses drones to deliver packages to rural areas"
+  },
+  {
+    "ts": "2026-07-03T15:14:10.541Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 3,
+    "tweet": "3/ Drone swarms can now be controlled by a single AI agent reducing operational "
+  },
+  {
+    "ts": "2026-07-03T15:14:10.732Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 4,
+    "tweet": "4/ Regulations are being rewritten to accommodate autonomous drone flights in ur"
+  },
+  {
+    "ts": "2026-07-03T15:14:11.149Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 5,
+    "tweet": "5/ How will you adapt your business when drones start disrupting your supply cha"
   }
 ]
