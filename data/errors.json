@@ -1158,5 +1158,37 @@
     "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
     "phase": "reply",
     "account": "levelsio"
+  },
+  {
+    "ts": "2026-07-04T14:41:21.934Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 2,
+    "tweet": "2/ Autonomous systems are already being used in TURKISH FARMING to increase crop"
+  },
+  {
+    "ts": "2026-07-04T14:41:22.105Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 3,
+    "tweet": "3/ REAL-TIME DATA from drones can reduce construction project timelines by 30%"
+  },
+  {
+    "ts": "2026-07-04T14:41:22.266Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 4,
+    "tweet": "4/ Drone-based INSPECTION SERVICES are a 10B-dollar market waiting to be tapped"
+  },
+  {
+    "ts": "2026-07-04T14:41:22.418Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 5,
+    "tweet": "5/ What's the biggest obstacle to widespread drone adoption in your industry"
   }
 ]
