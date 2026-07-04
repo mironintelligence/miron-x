@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-07-03T06:53:50.736Z",
+  "updatedAt": "2026-07-04T06:38:29.096Z",
   "status": "active",
-  "totalTweets": 110,
+  "totalTweets": 112,
   "tweetsWithEngagement": 0,
   "typePerformance": {
     "general": {
-      "count": 37,
+      "count": 39,
       "withEngagement": 0,
       "avgScore": null
     },
@@ -41,7 +41,7 @@
     {
       "keyword": "AI",
       "avgScore": 0,
-      "count": 30
+      "count": 31
     },
     {
       "keyword": "LLM",
@@ -81,7 +81,7 @@
     {
       "keyword": "build",
       "avgScore": 0,
-      "count": 30
+      "count": 31
     },
     {
       "keyword": "SV",
@@ -91,7 +91,7 @@
   ],
   "formatInsights": {
     "avgHighScoreLength": 117,
-    "avgLowScoreLength": 98,
+    "avgLowScoreLength": 97,
     "optimalLengthRange": [
       94,
       140
@@ -101,7 +101,7 @@
     "questionEndingBoost": 1
   },
   "recommendations": [
-    "Optimal length: 94–140 chars (high performers: 117c, low: 98c)",
+    "Optimal length: 94–140 chars (high performers: 117c, low: 97c)",
     "High-performing keywords: \"AI\" (0pts), \"LLM\" (0pts), \"production\" (0pts)"
   ]
 }
