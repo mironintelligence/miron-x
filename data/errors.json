@@ -1190,5 +1190,33 @@
     "phase": "send_tweet",
     "tweetIndex": 5,
     "tweet": "5/ What's the biggest obstacle to widespread drone adoption in your industry"
+  },
+  {
+    "ts": "2026-07-04T17:52:42.092Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "gregisenberg"
+  },
+  {
+    "ts": "2026-07-04T17:52:49.678Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "shreyas"
+  },
+  {
+    "ts": "2026-07-04T17:52:59.171Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "swyx"
+  },
+  {
+    "ts": "2026-07-04T17:53:07.059Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "thejustinwelsh"
   }
 ]
