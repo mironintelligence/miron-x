@@ -1218,5 +1218,37 @@
     "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
     "phase": "reply",
     "account": "thejustinwelsh"
+  },
+  {
+    "ts": "2026-07-05T14:47:28.126Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 1,
+    "tweet": "1/ MOST DIGITAL AGENCIES are secretly outsourced to EASTERN EUROPEAN FREELANCERS"
+  },
+  {
+    "ts": "2026-07-05T14:47:46.639Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 3,
+    "tweet": "3/ Polish designers create 40% of UK's website layouts using Figma and Sketch"
+  },
+  {
+    "ts": "2026-07-05T14:47:46.820Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 4,
+    "tweet": "4/ Romanian engineers maintain 30% of Germany's IT infrastructure on AWS and Azu"
+  },
+  {
+    "ts": "2026-07-05T14:47:46.997Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 5,
+    "tweet": "5/ What happens when these freelancers decide to build their own products instea"
   }
 ]
