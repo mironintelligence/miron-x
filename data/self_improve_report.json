@@ -1,14 +1,14 @@
 {
-  "updatedAt": "2026-07-05T06:59:59.521Z",
+  "updatedAt": "2026-07-06T08:09:56.067Z",
   "errorAnalysis": {
-    "totalRecent": 56,
+    "totalRecent": 65,
     "byScript": {
       "engage.js": {
-        "count": 30,
-        "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
+        "count": 35,
+        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
       },
       "thread.js": {
-        "count": 14,
+        "count": 18,
         "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
       },
       "repost.js": {
@@ -23,12 +23,12 @@
     "criticalScripts": [
       {
         "script": "engage.js",
-        "count": 30,
-        "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
+        "count": 35,
+        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
       },
       {
         "script": "thread.js",
-        "count": 14,
+        "count": 18,
         "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
       },
       {
@@ -44,22 +44,22 @@
     "bestType": null,
     "worstType": null,
     "recommendations": [
-      "Optimal length: 93–139 chars (high performers: 116c, low: 94c)",
+      "Optimal length: 92–138 chars (high performers: 115c, low: 92c)",
       "High-performing keywords: \"AI\" (0pts), \"LLM\" (0pts), \"production\" (0pts)"
     ]
   },
   "growthAnalysis": {
     "currentFollowers": 5,
     "totalGain": 0,
-    "trackingDays": 19,
+    "trackingDays": 20,
     "dailyGrowthRate": 0,
     "isStagnant": true,
     "recentGain": 0
   },
   "keywordSuggestions": [],
   "overallRecommendations": [
-    "CRITICAL: Repeated errors in: engage.js (30x), thread.js (14x), repost.js (10x) — check errors.json",
-    "GROWTH STAGNANT: No new followers in 19 tracked days — increase engage.js frequency or adjust content mix"
+    "CRITICAL: Repeated errors in: engage.js (35x), thread.js (18x), repost.js (10x) — check errors.json",
+    "GROWTH STAGNANT: No new followers in 20 tracked days — increase engage.js frequency or adjust content mix"
   ],
   "dynamicConfigUpdated": true
 }
