@@ -1,40 +1,40 @@
 {
-  "updatedAt": "2026-07-07T07:26:20.243Z",
+  "updatedAt": "2026-07-08T06:21:46.188Z",
   "errorAnalysis": {
-    "totalRecent": 70,
+    "totalRecent": 67,
     "byScript": {
-      "thread.js": {
-        "count": 22,
-        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
-      },
       "engage.js": {
-        "count": 32,
+        "count": 31,
         "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
       },
       "repost.js": {
-        "count": 14,
-        "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
+        "count": 17,
+        "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
       },
       "analytics.js": {
         "count": 2,
         "lastError": "REST statuses/show.json HTTP 403: <!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-js ie8 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"en-US\"> <!"
+      },
+      "thread.js": {
+        "count": 17,
+        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
       }
     },
     "criticalScripts": [
       {
-        "script": "thread.js",
-        "count": 22,
-        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
-      },
-      {
         "script": "engage.js",
-        "count": 32,
+        "count": 31,
         "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
       },
       {
         "script": "repost.js",
-        "count": 14,
-        "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
+        "count": 17,
+        "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
+      },
+      {
+        "script": "thread.js",
+        "count": 17,
+        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
       }
     ]
   },
@@ -44,22 +44,22 @@
     "bestType": null,
     "worstType": null,
     "recommendations": [
-      "Optimal length: 92–138 chars (high performers: 115c, low: 90c)",
+      "Optimal length: 91–137 chars (high performers: 114c, low: 90c)",
       "High-performing keywords: \"AI\" (0pts), \"LLM\" (0pts), \"production\" (0pts)"
     ]
   },
   "growthAnalysis": {
     "currentFollowers": 5,
     "totalGain": 0,
-    "trackingDays": 21,
+    "trackingDays": 22,
     "dailyGrowthRate": 0,
     "isStagnant": true,
     "recentGain": 0
   },
   "keywordSuggestions": [],
   "overallRecommendations": [
-    "CRITICAL: Repeated errors in: thread.js (22x), engage.js (32x), repost.js (14x) — check errors.json",
-    "GROWTH STAGNANT: No new followers in 21 tracked days — increase engage.js frequency or adjust content mix"
+    "CRITICAL: Repeated errors in: engage.js (31x), repost.js (17x), thread.js (17x) — check errors.json",
+    "GROWTH STAGNANT: No new followers in 22 tracked days — increase engage.js frequency or adjust content mix"
   ],
   "dynamicConfigUpdated": true
 }
