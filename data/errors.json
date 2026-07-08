@@ -1394,5 +1394,47 @@
     "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
     "phase": "quote_tweet",
     "account": "garrytan"
+  },
+  {
+    "ts": "2026-07-08T15:26:19.077Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "garrytan"
+  },
+  {
+    "ts": "2026-07-08T15:26:26.739Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "stephsmithio"
+  },
+  {
+    "ts": "2026-07-08T15:26:34.403Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "amasad"
+  },
+  {
+    "ts": "2026-07-08T15:26:42.147Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "paulg"
+  },
+  {
+    "ts": "2026-07-08T15:26:50.134Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "hnshah"
+  },
+  {
+    "ts": "2026-07-08T15:26:57.581Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "fortelabs"
   }
 ]
