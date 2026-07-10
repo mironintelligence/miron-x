@@ -1567,5 +1567,40 @@
     "phase": "send_tweet",
     "tweetIndex": 5,
     "tweet": "5/ What's the REAL COST of building a company to flip versus one to LAST"
+  },
+  {
+    "ts": "2026-07-10T21:05:51.404Z",
+    "script": "repost.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "quote_tweet",
+    "account": "elonmusk"
+  },
+  {
+    "ts": "2026-07-10T21:05:54.045Z",
+    "script": "repost.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "quote_tweet",
+    "account": "tibo_maker"
+  },
+  {
+    "ts": "2026-07-10T21:06:01.226Z",
+    "script": "repost.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "quote_tweet",
+    "account": "paulg"
+  },
+  {
+    "ts": "2026-07-10T21:06:04.493Z",
+    "script": "repost.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "quote_tweet",
+    "account": "levelsio"
+  },
+  {
+    "ts": "2026-07-10T21:06:07.580Z",
+    "script": "repost.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "quote_tweet",
+    "account": "dhh"
   }
 ]
