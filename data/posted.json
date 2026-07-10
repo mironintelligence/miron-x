@@ -1421,5 +1421,11 @@
     "id": "2075557052059979949",
     "ts": "2026-07-10T12:25:37.993Z",
     "type": "london"
+  },
+  {
+    "text": "AI agents fail because they're trained on CLEAN DATA not the MESSY REALITY you actually ship in.",
+    "id": "2075625344913064270",
+    "ts": "2026-07-10T16:57:00.272Z",
+    "type": "general"
   }
 ]
