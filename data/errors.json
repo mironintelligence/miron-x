@@ -1527,5 +1527,45 @@
     "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
     "phase": "reply",
     "account": "tibo_maker"
+  },
+  {
+    "ts": "2026-07-10T15:34:15.526Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "send_tweet",
+    "tweetIndex": 1,
+    "tweet": "1/ MOST TECH COMPANIES WILL BE SIDE-HUSTLES BY 2025"
+  },
+  {
+    "ts": "2026-07-10T15:34:15.697Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "send_tweet",
+    "tweetIndex": 2,
+    "tweet": "2/ Only 12% of founders have a clear EXIT STRATEGY in place"
+  },
+  {
+    "ts": "2026-07-10T15:34:15.900Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "send_tweet",
+    "tweetIndex": 3,
+    "tweet": "3/ 75% of startup acquisitions happen with less than 100 employees on board"
+  },
+  {
+    "ts": "2026-07-10T15:34:16.076Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "send_tweet",
+    "tweetIndex": 4,
+    "tweet": "4/ 40% of founders who sell their companies REGRET IT within 2 years"
+  },
+  {
+    "ts": "2026-07-10T15:34:16.241Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "send_tweet",
+    "tweetIndex": 5,
+    "tweet": "5/ What's the REAL COST of building a company to flip versus one to LAST"
   }
 ]
