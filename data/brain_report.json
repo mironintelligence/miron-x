@@ -1,21 +1,21 @@
 {
-  "updatedAt": "2026-07-09T07:28:45.706Z",
+  "updatedAt": "2026-07-10T07:24:46.310Z",
   "status": "active",
-  "totalTweets": 137,
+  "totalTweets": 141,
   "tweetsWithEngagement": 0,
   "typePerformance": {
     "general": {
-      "count": 50,
+      "count": 52,
       "withEngagement": 0,
       "avgScore": null
     },
     "sv": {
-      "count": 29,
+      "count": 30,
       "withEngagement": 0,
       "avgScore": null
     },
     "london": {
-      "count": 15,
+      "count": 16,
       "withEngagement": 0,
       "avgScore": null
     },
@@ -41,7 +41,7 @@
     {
       "keyword": "AI",
       "avgScore": 0,
-      "count": 39
+      "count": 40
     },
     {
       "keyword": "LLM",
@@ -56,7 +56,7 @@
     {
       "keyword": "founder",
       "avgScore": 0,
-      "count": 48
+      "count": 50
     },
     {
       "keyword": "startup",
@@ -81,17 +81,17 @@
     {
       "keyword": "build",
       "avgScore": 0,
-      "count": 41
+      "count": 43
     },
     {
       "keyword": "SV",
       "avgScore": 0,
-      "count": 22
+      "count": 24
     }
   ],
   "formatInsights": {
     "avgHighScoreLength": 114,
-    "avgLowScoreLength": 88,
+    "avgLowScoreLength": 87,
     "optimalLengthRange": [
       91,
       137
@@ -101,7 +101,7 @@
     "questionEndingBoost": 1
   },
   "recommendations": [
-    "Optimal length: 91–137 chars (high performers: 114c, low: 88c)",
+    "Optimal length: 91–137 chars (high performers: 114c, low: 87c)",
     "High-performing keywords: \"AI\" (0pts), \"LLM\" (0pts), \"production\" (0pts)"
   ]
 }
