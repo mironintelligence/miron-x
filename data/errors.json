@@ -1662,5 +1662,26 @@
     "phase": "send_tweet",
     "tweetIndex": 4,
     "tweet": "4/ ONLY 5 COMPANIES worldwide have developed DRONE SYSTEMS for HIGH-SPEED DATA"
+  },
+  {
+    "ts": "2026-07-11T17:43:09.534Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: The original Tweet author restricted who can reply to this Tweet. (433)",
+    "phase": "reply",
+    "account": "levelsio"
+  },
+  {
+    "ts": "2026-07-11T17:43:17.238Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "swyx"
+  },
+  {
+    "ts": "2026-07-11T17:43:25.016Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "paulg"
   }
 ]
