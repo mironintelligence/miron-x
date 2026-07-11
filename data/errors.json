@@ -1630,5 +1630,37 @@
     "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
     "phase": "reply",
     "account": "thejustinwelsh"
+  },
+  {
+    "ts": "2026-07-11T14:23:36.876Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 1,
+    "tweet": "1/ Most DRONE REGULATIONS are based on 10-year-old TECHNOLOGY"
+  },
+  {
+    "ts": "2026-07-11T14:23:37.012Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 2,
+    "tweet": "2/ CURRENT DRONE SYSTEMS can process 300KB of data per second"
+  },
+  {
+    "ts": "2026-07-11T14:23:37.205Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 3,
+    "tweet": "3/ NEXT-GEN DRONES will require 10GB of data processing per second"
+  },
+  {
+    "ts": "2026-07-11T14:23:37.344Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 4,
+    "tweet": "4/ ONLY 5 COMPANIES worldwide have developed DRONE SYSTEMS for HIGH-SPEED DATA"
   }
 ]
