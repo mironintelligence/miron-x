@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-07-12T06:26:17.373Z",
+  "updatedAt": "2026-07-13T06:44:50.510Z",
   "status": "active",
-  "totalTweets": 152,
+  "totalTweets": 153,
   "tweetsWithEngagement": 0,
   "typePerformance": {
     "general": {
-      "count": 59,
+      "count": 60,
       "withEngagement": 0,
       "avgScore": null
     },
@@ -41,7 +41,7 @@
     {
       "keyword": "AI",
       "avgScore": 0,
-      "count": 42
+      "count": 43
     },
     {
       "keyword": "LLM",
@@ -91,7 +91,7 @@
   ],
   "formatInsights": {
     "avgHighScoreLength": 112,
-    "avgLowScoreLength": 84,
+    "avgLowScoreLength": 83,
     "optimalLengthRange": [
       90,
       134
@@ -101,7 +101,7 @@
     "questionEndingBoost": 1
   },
   "recommendations": [
-    "Optimal length: 90–134 chars (high performers: 112c, low: 84c)",
+    "Optimal length: 90–134 chars (high performers: 112c, low: 83c)",
     "High-performing keywords: \"AI\" (0pts), \"LLM\" (0pts), \"production\" (0pts)"
   ]
 }
