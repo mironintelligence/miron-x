@@ -1,36 +1,36 @@
 {
-  "updatedAt": "2026-07-13T06:44:50.557Z",
+  "updatedAt": "2026-07-14T06:02:00.406Z",
   "errorAnalysis": {
-    "totalRecent": 63,
+    "totalRecent": 56,
     "byScript": {
-      "thread.js": {
-        "count": 13,
-        "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
-      },
       "repost.js": {
-        "count": 13,
+        "count": 9,
         "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
       },
       "engage.js": {
-        "count": 37,
-        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
+        "count": 38,
+        "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
+      },
+      "thread.js": {
+        "count": 9,
+        "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
       }
     },
     "criticalScripts": [
       {
-        "script": "thread.js",
-        "count": 13,
-        "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
-      },
-      {
         "script": "repost.js",
-        "count": 13,
+        "count": 9,
         "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
       },
       {
         "script": "engage.js",
-        "count": 37,
-        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
+        "count": 38,
+        "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
+      },
+      {
+        "script": "thread.js",
+        "count": 9,
+        "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
       }
     ]
   },
@@ -40,22 +40,22 @@
     "bestType": null,
     "worstType": null,
     "recommendations": [
-      "Optimal length: 90–134 chars (high performers: 112c, low: 83c)",
+      "Optimal length: 89–133 chars (high performers: 111c, low: 81c)",
       "High-performing keywords: \"AI\" (0pts), \"LLM\" (0pts), \"production\" (0pts)"
     ]
   },
   "growthAnalysis": {
     "currentFollowers": 5,
     "totalGain": 0,
-    "trackingDays": 27,
+    "trackingDays": 28,
     "dailyGrowthRate": 0,
     "isStagnant": true,
     "recentGain": 0
   },
   "keywordSuggestions": [],
   "overallRecommendations": [
-    "CRITICAL: Repeated errors in: thread.js (13x), repost.js (13x), engage.js (37x) — check errors.json",
-    "GROWTH STAGNANT: No new followers in 27 tracked days — increase engage.js frequency or adjust content mix"
+    "CRITICAL: Repeated errors in: repost.js (9x), engage.js (38x), thread.js (9x) — check errors.json",
+    "GROWTH STAGNANT: No new followers in 28 tracked days — increase engage.js frequency or adjust content mix"
   ],
   "dynamicConfigUpdated": true
 }
