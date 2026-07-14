@@ -1821,5 +1821,40 @@
     "error": "CreateTweet error: Authorization: The original Tweet author restricted who can reply to this Tweet. (433)",
     "phase": "reply",
     "account": "Jason"
+  },
+  {
+    "ts": "2026-07-14T21:00:21.917Z",
+    "script": "repost.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "quote_tweet",
+    "account": "garrytan"
+  },
+  {
+    "ts": "2026-07-14T21:00:25.230Z",
+    "script": "repost.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "quote_tweet",
+    "account": "levelsio"
+  },
+  {
+    "ts": "2026-07-14T21:00:30.807Z",
+    "script": "repost.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "quote_tweet",
+    "account": "tibo_maker"
+  },
+  {
+    "ts": "2026-07-14T21:00:36.317Z",
+    "script": "repost.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "quote_tweet",
+    "account": "gregisenberg"
+  },
+  {
+    "ts": "2026-07-14T21:00:39.219Z",
+    "script": "repost.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "quote_tweet",
+    "account": "elonmusk"
   }
 ]
