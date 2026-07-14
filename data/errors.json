@@ -1774,5 +1774,45 @@
     "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
     "phase": "reply",
     "account": "naval"
+  },
+  {
+    "ts": "2026-07-14T14:56:52.906Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 1,
+    "tweet": "1/ MOST MARKETING FUNNELS are actually LEAKY PIPES with 80% of customers lost at"
+  },
+  {
+    "ts": "2026-07-14T14:56:53.099Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 2,
+    "tweet": "2/ Turkish e-commerce sites have 30% higher checkout abandonment rates due to ou"
+  },
+  {
+    "ts": "2026-07-14T14:56:53.228Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 3,
+    "tweet": "3/ Average customer support ticket resolution time is 24 hours in EU versus 12 h"
+  },
+  {
+    "ts": "2026-07-14T14:56:53.365Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 4,
+    "tweet": "4/ 60% of online shopping carts are abandoned due to lack of transparent shippin"
+  },
+  {
+    "ts": "2026-07-14T14:56:53.502Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 5,
+    "tweet": "5/ What's the real cost of a single abandoned cart to your business can you affo"
   }
 ]
