@@ -1814,5 +1814,12 @@
     "phase": "send_tweet",
     "tweetIndex": 5,
     "tweet": "5/ What's the real cost of a single abandoned cart to your business can you affo"
+  },
+  {
+    "ts": "2026-07-14T17:54:27.008Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: The original Tweet author restricted who can reply to this Tweet. (433)",
+    "phase": "reply",
+    "account": "Jason"
   }
 ]
