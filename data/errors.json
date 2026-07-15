@@ -1856,5 +1856,33 @@
     "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
     "phase": "quote_tweet",
     "account": "elonmusk"
+  },
+  {
+    "ts": "2026-07-15T21:00:23.236Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "quote_tweet",
+    "account": "gregisenberg"
+  },
+  {
+    "ts": "2026-07-15T21:00:31.621Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "quote_tweet",
+    "account": "elonmusk"
+  },
+  {
+    "ts": "2026-07-15T21:00:34.458Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "quote_tweet",
+    "account": "levelsio"
+  },
+  {
+    "ts": "2026-07-15T21:00:37.124Z",
+    "script": "repost.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "quote_tweet",
+    "account": "paulg"
   }
 ]
