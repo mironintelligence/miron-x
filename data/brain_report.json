@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-07-14T06:02:00.353Z",
+  "updatedAt": "2026-07-15T06:07:03.047Z",
   "status": "active",
-  "totalTweets": 158,
+  "totalTweets": 161,
   "tweetsWithEngagement": 0,
   "typePerformance": {
     "general": {
@@ -10,12 +10,12 @@
       "avgScore": null
     },
     "sv": {
-      "count": 32,
+      "count": 34,
       "withEngagement": 0,
       "avgScore": null
     },
     "london": {
-      "count": 17,
+      "count": 18,
       "withEngagement": 0,
       "avgScore": null
     },
@@ -56,7 +56,7 @@
     {
       "keyword": "founder",
       "avgScore": 0,
-      "count": 53
+      "count": 56
     },
     {
       "keyword": "startup",
@@ -81,12 +81,12 @@
     {
       "keyword": "build",
       "avgScore": 0,
-      "count": 46
+      "count": 47
     },
     {
       "keyword": "SV",
       "avgScore": 0,
-      "count": 26
+      "count": 28
     }
   ],
   "formatInsights": {
