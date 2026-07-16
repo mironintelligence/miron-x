@@ -1884,5 +1884,37 @@
     "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
     "phase": "quote_tweet",
     "account": "paulg"
+  },
+  {
+    "ts": "2026-07-16T15:06:36.526Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 1,
+    "tweet": "1/ MOST AI PRODUCTS are designed for LOW-STAKES environments but REAL value lies"
+  },
+  {
+    "ts": "2026-07-16T15:06:54.896Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 3,
+    "tweet": "3/ LLMs can generate REALTIME threat assessments for CYBERSECURITY teams"
+  },
+  {
+    "ts": "2026-07-16T15:06:55.026Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 4,
+    "tweet": "4/ AI-powered predictive maintenance can save INDUSTRIAL EQUIPMENT owners millio"
+  },
+  {
+    "ts": "2026-07-16T15:06:55.160Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 5,
+    "tweet": "5/ What HIGH-STAKES industry will be transformed by AI FIRST and who will own it"
   }
 ]
