@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-07-15T06:07:03.104Z",
+  "updatedAt": "2026-07-16T06:10:25.096Z",
   "errorAnalysis": {
-    "totalRecent": 64,
+    "totalRecent": 59,
     "byScript": {
       "engage.js": {
-        "count": 39,
+        "count": 30,
         "lastError": "CreateTweet error: Authorization: The original Tweet author restricted who can reply to this Tweet. (433)"
       },
       "repost.js": {
-        "count": 11,
-        "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
+        "count": 15,
+        "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
       },
       "thread.js": {
         "count": 14,
@@ -19,13 +19,13 @@
     "criticalScripts": [
       {
         "script": "engage.js",
-        "count": 39,
+        "count": 30,
         "lastError": "CreateTweet error: Authorization: The original Tweet author restricted who can reply to this Tweet. (433)"
       },
       {
         "script": "repost.js",
-        "count": 11,
-        "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
+        "count": 15,
+        "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
       },
       {
         "script": "thread.js",
@@ -47,15 +47,15 @@
   "growthAnalysis": {
     "currentFollowers": 5,
     "totalGain": 0,
-    "trackingDays": 29,
+    "trackingDays": 30,
     "dailyGrowthRate": 0,
     "isStagnant": true,
     "recentGain": 0
   },
   "keywordSuggestions": [],
   "overallRecommendations": [
-    "CRITICAL: Repeated errors in: engage.js (39x), repost.js (11x), thread.js (14x) — check errors.json",
-    "GROWTH STAGNANT: No new followers in 29 tracked days — increase engage.js frequency or adjust content mix"
+    "CRITICAL: Repeated errors in: engage.js (30x), repost.js (15x), thread.js (14x) — check errors.json",
+    "GROWTH STAGNANT: No new followers in 30 tracked days — increase engage.js frequency or adjust content mix"
   ],
   "dynamicConfigUpdated": true
 }
