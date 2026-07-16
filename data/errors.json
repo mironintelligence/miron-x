@@ -1916,5 +1916,26 @@
     "phase": "send_tweet",
     "tweetIndex": 5,
     "tweet": "5/ What HIGH-STAKES industry will be transformed by AI FIRST and who will own it"
+  },
+  {
+    "ts": "2026-07-16T15:07:40.064Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "thejustinwelsh"
+  },
+  {
+    "ts": "2026-07-16T15:07:47.811Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "pmarca"
+  },
+  {
+    "ts": "2026-07-16T15:07:55.488Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "elonmusk"
   }
 ]
