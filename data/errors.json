@@ -1937,5 +1937,40 @@
     "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
     "phase": "reply",
     "account": "elonmusk"
+  },
+  {
+    "ts": "2026-07-16T17:57:59.191Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "nikitabier"
+  },
+  {
+    "ts": "2026-07-16T17:58:07.052Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "garrytan"
+  },
+  {
+    "ts": "2026-07-16T17:58:14.709Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "hnshah"
+  },
+  {
+    "ts": "2026-07-16T17:58:22.405Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "swyx"
+  },
+  {
+    "ts": "2026-07-16T17:58:30.174Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "reply",
+    "account": "pmarca"
   }
 ]
