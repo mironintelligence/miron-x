@@ -2049,5 +2049,40 @@
     "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
     "phase": "reply",
     "account": "levelsio"
+  },
+  {
+    "ts": "2026-07-17T17:53:51.755Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "garrytan"
+  },
+  {
+    "ts": "2026-07-17T17:53:59.388Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "naval"
+  },
+  {
+    "ts": "2026-07-17T17:54:07.420Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "elonmusk"
+  },
+  {
+    "ts": "2026-07-17T17:54:28.140Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "sahilbloom"
+  },
+  {
+    "ts": "2026-07-17T17:54:35.994Z",
+    "script": "engage.js",
+    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
+    "phase": "reply",
+    "account": "hnshah"
   }
 ]
