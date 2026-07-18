@@ -1,19 +1,5 @@
 [
   {
-    "ts": "2026-06-16T19:59:59.011Z",
-    "script": "engage.js",
-    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
-    "phase": "reply",
-    "account": "paulg"
-  },
-  {
-    "ts": "2026-06-16T20:00:07.209Z",
-    "script": "engage.js",
-    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
-    "phase": "reply",
-    "account": "naval"
-  },
-  {
     "ts": "2026-06-16T20:00:30.380Z",
     "script": "engage.js",
     "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
@@ -2154,5 +2140,29 @@
     "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
     "phase": "reply",
     "account": "thejustinwelsh"
+  },
+  {
+    "ts": "2026-07-18T14:21:47.529Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 2,
+    "tweet": "2/ Germany's vocational system produces 50% more skilled tradespeople than the U"
+  },
+  {
+    "ts": "2026-07-18T14:22:06.012Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 4,
+    "tweet": "4/ Cities with strong vocational programs have 30% lower youth UNEMPLOYMENT rate"
+  },
+  {
+    "ts": "2026-07-18T14:22:06.183Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 5,
+    "tweet": "5/ What would happen if every country shifted 10% of STEM funding to vocational "
   }
 ]
