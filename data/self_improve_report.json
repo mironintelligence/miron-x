@@ -1,35 +1,35 @@
 {
-  "updatedAt": "2026-07-18T05:57:30.622Z",
+  "updatedAt": "2026-07-19T06:22:41.842Z",
   "errorAnalysis": {
-    "totalRecent": 73,
+    "totalRecent": 69,
     "byScript": {
-      "thread.js": {
-        "count": 13,
-        "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
-      },
       "engage.js": {
-        "count": 41,
+        "count": 34,
         "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
       },
+      "thread.js": {
+        "count": 12,
+        "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
+      },
       "repost.js": {
-        "count": 19,
+        "count": 23,
         "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
       }
     },
     "criticalScripts": [
       {
-        "script": "thread.js",
-        "count": 13,
-        "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
-      },
-      {
         "script": "engage.js",
-        "count": 41,
+        "count": 34,
         "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
       },
       {
+        "script": "thread.js",
+        "count": 12,
+        "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
+      },
+      {
         "script": "repost.js",
-        "count": 19,
+        "count": 23,
         "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
       }
     ]
@@ -40,22 +40,22 @@
     "bestType": null,
     "worstType": null,
     "recommendations": [
-      "Optimal length: 87–131 chars (high performers: 109c, low: 79c)",
+      "Optimal length: 87–131 chars (high performers: 109c, low: 78c)",
       "High-performing keywords: \"AI\" (0pts), \"LLM\" (0pts), \"production\" (0pts)"
     ]
   },
   "growthAnalysis": {
     "currentFollowers": 5,
     "totalGain": 0,
-    "trackingDays": 32,
+    "trackingDays": 33,
     "dailyGrowthRate": 0,
     "isStagnant": true,
     "recentGain": 0
   },
   "keywordSuggestions": [],
   "overallRecommendations": [
-    "CRITICAL: Repeated errors in: thread.js (13x), engage.js (41x), repost.js (19x) — check errors.json",
-    "GROWTH STAGNANT: No new followers in 32 tracked days — increase engage.js frequency or adjust content mix"
+    "CRITICAL: Repeated errors in: engage.js (34x), thread.js (12x), repost.js (23x) — check errors.json",
+    "GROWTH STAGNANT: No new followers in 33 tracked days — increase engage.js frequency or adjust content mix"
   ],
   "dynamicConfigUpdated": true
 }
