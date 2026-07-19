@@ -1,33 +1,5 @@
 [
   {
-    "ts": "2026-06-17T16:41:21.752Z",
-    "script": "engage.js",
-    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
-    "phase": "reply",
-    "account": "elonmusk"
-  },
-  {
-    "ts": "2026-06-17T16:41:29.582Z",
-    "script": "engage.js",
-    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
-    "phase": "reply",
-    "account": "garrytan"
-  },
-  {
-    "ts": "2026-06-17T16:41:49.949Z",
-    "script": "engage.js",
-    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
-    "phase": "reply",
-    "account": "shreyas"
-  },
-  {
-    "ts": "2026-06-17T22:04:48.264Z",
-    "script": "repost.js",
-    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
-    "phase": "quote_tweet",
-    "account": "paulg"
-  },
-  {
     "ts": "2026-06-17T22:04:50.946Z",
     "script": "repost.js",
     "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
@@ -2164,5 +2136,37 @@
     "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
     "phase": "quote_tweet",
     "account": "tibo_maker"
+  },
+  {
+    "ts": "2026-07-19T14:25:04.488Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 2,
+    "tweet": "2/ 80% of their costs are FIXED and tied to EXPENSIVE office space in CITY CENTE"
+  },
+  {
+    "ts": "2026-07-19T14:25:04.624Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 3,
+    "tweet": "3/ RECRUITING and TRAINING new staff takes 6 MONTHS on average and COSTS $10k pe"
+  },
+  {
+    "ts": "2026-07-19T14:25:04.850Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 4,
+    "tweet": "4/ Only COMPANIES with VARIABLE costs and REMOTE workforces will be able to ADAP"
+  },
+  {
+    "ts": "2026-07-19T14:25:05.002Z",
+    "script": "thread.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "send_tweet",
+    "tweetIndex": 5,
+    "tweet": "5/ What's the ONE thing your company can do TODAY to reduce FIXED costs and incr"
   }
 ]
