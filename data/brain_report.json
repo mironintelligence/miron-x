@@ -1,31 +1,31 @@
 {
-  "updatedAt": "2026-07-19T06:22:41.796Z",
+  "updatedAt": "2026-07-20T06:39:24.051Z",
   "status": "active",
-  "totalTweets": 176,
+  "totalTweets": 183,
   "tweetsWithEngagement": 0,
   "typePerformance": {
     "general": {
-      "count": 71,
+      "count": 73,
       "withEngagement": 0,
       "avgScore": null
     },
     "sv": {
-      "count": 36,
+      "count": 38,
       "withEngagement": 0,
       "avgScore": null
     },
     "london": {
-      "count": 19,
+      "count": 20,
       "withEngagement": 0,
       "avgScore": null
     },
     "wolf": {
-      "count": 12,
+      "count": 13,
       "withEngagement": 0,
       "avgScore": null
     },
     "thread": {
-      "count": 25,
+      "count": 26,
       "withEngagement": 0,
       "avgScore": null
     }
@@ -41,7 +41,7 @@
     {
       "keyword": "AI",
       "avgScore": 0,
-      "count": 51
+      "count": 52
     },
     {
       "keyword": "LLM",
@@ -56,22 +56,22 @@
     {
       "keyword": "founder",
       "avgScore": 0,
-      "count": 57
+      "count": 60
     },
     {
       "keyword": "startup",
       "avgScore": 0,
-      "count": 18
+      "count": 19
     },
     {
       "keyword": "VC",
       "avgScore": 0,
-      "count": 17
+      "count": 18
     },
     {
       "keyword": "distribution",
       "avgScore": 0,
-      "count": 11
+      "count": 13
     },
     {
       "keyword": "product",
@@ -81,7 +81,7 @@
     {
       "keyword": "build",
       "avgScore": 0,
-      "count": 51
+      "count": 52
     },
     {
       "keyword": "SV",
@@ -90,18 +90,18 @@
     }
   ],
   "formatInsights": {
-    "avgHighScoreLength": 109,
-    "avgLowScoreLength": 78,
+    "avgHighScoreLength": 107,
+    "avgLowScoreLength": 77,
     "optimalLengthRange": [
-      87,
-      131
+      86,
+      128
     ],
     "questionEndingInTop": 0,
     "questionEndingOverall": 0,
     "questionEndingBoost": 1
   },
   "recommendations": [
-    "Optimal length: 87–131 chars (high performers: 109c, low: 78c)",
+    "Optimal length: 86–128 chars (high performers: 107c, low: 77c)",
     "High-performing keywords: \"AI\" (0pts), \"LLM\" (0pts), \"production\" (0pts)"
   ]
 }

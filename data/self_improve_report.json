@@ -1,14 +1,14 @@
 {
-  "updatedAt": "2026-07-19T06:22:41.842Z",
+  "updatedAt": "2026-07-20T06:39:24.109Z",
   "errorAnalysis": {
-    "totalRecent": 69,
+    "totalRecent": 68,
     "byScript": {
       "engage.js": {
-        "count": 34,
+        "count": 29,
         "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
       },
       "thread.js": {
-        "count": 12,
+        "count": 16,
         "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
       },
       "repost.js": {
@@ -19,12 +19,12 @@
     "criticalScripts": [
       {
         "script": "engage.js",
-        "count": 34,
+        "count": 29,
         "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
       },
       {
         "script": "thread.js",
-        "count": 12,
+        "count": 16,
         "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
       },
       {
@@ -40,22 +40,21 @@
     "bestType": null,
     "worstType": null,
     "recommendations": [
-      "Optimal length: 87–131 chars (high performers: 109c, low: 78c)",
+      "Optimal length: 86–128 chars (high performers: 107c, low: 77c)",
       "High-performing keywords: \"AI\" (0pts), \"LLM\" (0pts), \"production\" (0pts)"
     ]
   },
   "growthAnalysis": {
-    "currentFollowers": 5,
-    "totalGain": 0,
-    "trackingDays": 33,
-    "dailyGrowthRate": 0,
-    "isStagnant": true,
-    "recentGain": 0
+    "currentFollowers": 6,
+    "totalGain": 1,
+    "trackingDays": 34,
+    "dailyGrowthRate": 0.03,
+    "isStagnant": false,
+    "recentGain": 1
   },
   "keywordSuggestions": [],
   "overallRecommendations": [
-    "CRITICAL: Repeated errors in: engage.js (34x), thread.js (12x), repost.js (23x) — check errors.json",
-    "GROWTH STAGNANT: No new followers in 33 tracked days — increase engage.js frequency or adjust content mix"
+    "CRITICAL: Repeated errors in: engage.js (29x), thread.js (16x), repost.js (23x) — check errors.json"
   ],
   "dynamicConfigUpdated": true
 }
