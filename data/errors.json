@@ -1,27 +1,5 @@
 [
   {
-    "ts": "2026-06-18T23:53:07.194Z",
-    "script": "engage.js",
-    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
-    "phase": "reply",
-    "account": "shreyas"
-  },
-  {
-    "ts": "2026-06-18T23:53:15.164Z",
-    "script": "engage.js",
-    "error": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)",
-    "phase": "reply",
-    "account": "dvassallo"
-  },
-  {
-    "ts": "2026-06-19T16:09:57.792Z",
-    "script": "thread.js",
-    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
-    "phase": "send_tweet",
-    "tweetIndex": 1,
-    "tweet": "1/ Most DRONE TECH is held back by POWER SOURCE limitations"
-  },
-  {
     "ts": "2026-06-19T16:09:57.956Z",
     "script": "thread.js",
     "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
@@ -2165,5 +2143,29 @@
     "error": "CreateTweet error: Authorization: The original Tweet author restricted who can reply to this Tweet. (433)",
     "phase": "reply",
     "account": "levelsio"
+  },
+  {
+    "ts": "2026-07-21T15:06:36.261Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "send_tweet",
+    "tweetIndex": 1,
+    "tweet": "1/ MARKETS with high levels of CENSORSHIP produce more INNOVATIVE tech companies"
+  },
+  {
+    "ts": "2026-07-21T15:06:36.385Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "send_tweet",
+    "tweetIndex": 2,
+    "tweet": "2/ Turkey's gaming industry grew 20% last year despite strict online regulations"
+  },
+  {
+    "ts": "2026-07-21T15:07:13.101Z",
+    "script": "thread.js",
+    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
+    "phase": "send_tweet",
+    "tweetIndex": 5,
+    "tweet": "5/ Can strict online control actually DRIVE tech innovation what's the real rela"
   }
 ]
