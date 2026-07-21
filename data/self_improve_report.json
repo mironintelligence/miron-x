@@ -1,36 +1,36 @@
 {
-  "updatedAt": "2026-07-20T06:39:24.109Z",
+  "updatedAt": "2026-07-21T06:20:22.680Z",
   "errorAnalysis": {
-    "totalRecent": 68,
+    "totalRecent": 75,
     "byScript": {
-      "engage.js": {
-        "count": 29,
-        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
-      },
       "thread.js": {
         "count": 16,
         "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
       },
+      "engage.js": {
+        "count": 31,
+        "lastError": "CreateTweet error: Authorization: The original Tweet author restricted who can reply to this Tweet. (433)"
+      },
       "repost.js": {
-        "count": 23,
-        "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
+        "count": 28,
+        "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
       }
     },
     "criticalScripts": [
-      {
-        "script": "engage.js",
-        "count": 29,
-        "lastError": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)"
-      },
       {
         "script": "thread.js",
         "count": 16,
         "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
       },
       {
+        "script": "engage.js",
+        "count": 31,
+        "lastError": "CreateTweet error: Authorization: The original Tweet author restricted who can reply to this Tweet. (433)"
+      },
+      {
         "script": "repost.js",
-        "count": 23,
-        "lastError": "CreateTweet error: Authorization: This request looks like it might be automated. To protect our users from spam and other malicious activity, we can't complete this action right now. Please try again later. (226)"
+        "count": 28,
+        "lastError": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}"
       }
     ]
   },
@@ -47,14 +47,14 @@
   "growthAnalysis": {
     "currentFollowers": 6,
     "totalGain": 1,
-    "trackingDays": 34,
+    "trackingDays": 35,
     "dailyGrowthRate": 0.03,
     "isStagnant": false,
     "recentGain": 1
   },
   "keywordSuggestions": [],
   "overallRecommendations": [
-    "CRITICAL: Repeated errors in: engage.js (29x), thread.js (16x), repost.js (23x) — check errors.json"
+    "CRITICAL: Repeated errors in: thread.js (16x), engage.js (31x), repost.js (28x) — check errors.json"
   ],
   "dynamicConfigUpdated": true
 }
