@@ -1,43 +1,5 @@
 [
   {
-    "ts": "2026-06-19T16:09:57.956Z",
-    "script": "thread.js",
-    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
-    "phase": "send_tweet",
-    "tweetIndex": 2,
-    "tweet": "2/ SWAPPING BATTERIES is not a scalable solution for autonomous systems"
-  },
-  {
-    "ts": "2026-06-19T16:10:16.392Z",
-    "script": "thread.js",
-    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
-    "phase": "send_tweet",
-    "tweetIndex": 4,
-    "tweet": "4/ COMPANIES like mine are already testing these new POWER SOURCES in real world"
-  },
-  {
-    "ts": "2026-06-19T16:10:16.540Z",
-    "script": "thread.js",
-    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
-    "phase": "send_tweet",
-    "tweetIndex": 5,
-    "tweet": "5/ What would you build with a drone that can stay aloft for 5 hours"
-  },
-  {
-    "ts": "2026-06-19T23:07:02.947Z",
-    "script": "engage.js",
-    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
-    "phase": "reply",
-    "account": "pmarca"
-  },
-  {
-    "ts": "2026-06-19T23:07:25.488Z",
-    "script": "engage.js",
-    "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
-    "phase": "reply",
-    "account": "gregisenberg"
-  },
-  {
     "ts": "2026-06-19T23:07:32.965Z",
     "script": "engage.js",
     "error": "CreateTweet error: Authorization: You have reached your daily limit for sending Tweets and messages. Please try again later. (344)",
@@ -2167,5 +2129,40 @@
     "phase": "send_tweet",
     "tweetIndex": 5,
     "tweet": "5/ Can strict online control actually DRIVE tech innovation what's the real rela"
+  },
+  {
+    "ts": "2026-07-21T21:09:43.702Z",
+    "script": "repost.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "quote_tweet",
+    "account": "shl"
+  },
+  {
+    "ts": "2026-07-21T21:09:46.290Z",
+    "script": "repost.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "quote_tweet",
+    "account": "gregisenberg"
+  },
+  {
+    "ts": "2026-07-21T21:09:49.206Z",
+    "script": "repost.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "quote_tweet",
+    "account": "tibo_maker"
+  },
+  {
+    "ts": "2026-07-21T21:09:54.331Z",
+    "script": "repost.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "quote_tweet",
+    "account": "garrytan"
+  },
+  {
+    "ts": "2026-07-21T21:09:57.201Z",
+    "script": "repost.js",
+    "error": "Tweet not posted — response: {\"data\":{\"create_tweet\":{\"tweet_results\":{}}}}",
+    "phase": "quote_tweet",
+    "account": "levelsio"
   }
 ]
