@@ -1,10 +1,5 @@
 [
   {
-    "text": "\"Rio3.5 beating Qwen3.7 means nothing. What matters: can it handle real workflows, not just benchmarks?\"",
-    "ts": "2026-06-14T21:10:27.588Z",
-    "type": "general"
-  },
-  {
     "text": "Chaos is my home. Not something to be feared, but where I'm most alive.",
     "ts": "2026-06-14T21:23:45.004Z",
     "type": "wolf"
@@ -2043,6 +2038,12 @@
     "text": "Building AI for emerging markets requires UNDERSTANDING LOCAL CONTEXT not just translating English prompts.",
     "id": "2080410556905779609",
     "ts": "2026-07-23T21:51:43.715Z",
+    "type": "general"
+  },
+  {
+    "text": "Only 5% of LLMs are used for production the rest are BENCHMARK THEATER.",
+    "id": "2080486105657569622",
+    "ts": "2026-07-24T02:51:55.937Z",
     "type": "general"
   }
 ]
